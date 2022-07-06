@@ -16,3 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+Route::get('/blog', function () {
+    return view('blog');
+});
+Route::get('/soccer-bets-2', function () {
+    return view('soccer-bets-2');
+});
+Route::get('/tournaments', function () {
+    return view('tournaments');
+});
+

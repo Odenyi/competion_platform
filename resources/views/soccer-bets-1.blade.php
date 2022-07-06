@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peer to Peer Betting</title>
+    <title>Bitbetio - HTML Template</title>
 
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/plugin/nice-select.css">
     <link rel="stylesheet" href="assets/css/plugin/magnific-popup.css">
@@ -17,9 +18,6 @@
     <link rel="stylesheet" href="assets/css/arafat-font.css">
     <link rel="stylesheet" href="assets/css/plugin/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
-    
 </head>
 
 <body>
@@ -47,13 +45,13 @@
                         <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
                             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    <a class="nav-link" aria-current="page" href="index.html">Home</a>
                                 </li>
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
                                     <ul class="dropdown-menu main-menu shadow">
-                                        <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                                        <li><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                                         <li class="dropend sub-navbar">
                                             <a href="javascript:void(0)" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
                                               data-bs-auto-close="outside">Setting</a>
@@ -65,7 +63,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                    <a class="nav-link dropdown-toggle active" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
                                     <ul class="dropdown-menu main-menu shadow">
                                         <li><a class="nav-link" href="soccer-bets-2.html">Tennis</a></li>
@@ -73,7 +71,16 @@
                                         <li><a class="nav-link" href="soccer-bets-2.html">NBA</a></li>
                                     </ul>
                                 </li>
-                                
+                                <li class="nav-item dropdown main-navbar">
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Currency</a>
+                                    <ul class="dropdown-menu main-menu shadow">
+                                        <li><a class="nav-link" href="escrow-bets-fee.html">Escrow Bets Fee</a></li>
+                                        <li><a class="nav-link" href="currency-bet.html">Currency Bet</a></li>
+                                        <li><a class="nav-link" href="betting-details.html">Betting Details</a></li>
+                                        <li><a class="nav-link" href="create-new-currency.html">Create Currency</a></li>
+                                    </ul>
+                                </li>
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
@@ -109,7 +116,8 @@
                                 <button type="button" class="login" data-bs-toggle="modal" data-bs-target="#loginMod">
                                     Login
                                 </button>
-                                <button type="button" class="cmn-btn reg" data-bs-toggle="modal" data-bs-target="#loginMod">
+                                <button type="button" class="cmn-btn reg" data-bs-toggle="modal"
+                                    data-bs-target="#loginMod">
                                     Sign Up
                                 </button>
                             </div>
@@ -303,75 +311,34 @@
     <!-- Login Registration end -->
 
     <!-- Banner Section start -->
-    <section class="banner-section">
+    <section class="banner-section inner-banner soccer-bets">
         <div class="overlay">
             <div class="shape-area">
-                <img src="assets/images/coin-2.png" class="obj-1" alt="image">
-                <img src="assets/images/winner-cup.png" class="obj-2" alt="image">
+                <img src="assets/images/winner-cup.png" class="obj-1" alt="image">
+                <img src="assets/images/coin-5.png" class="obj-2" alt="image">
+                <img src="assets/images/coin-3.png" class="obj-3" alt="image">
+                <img src="assets/images/coin-6.png" class="obj-4" alt="image">
+                <img src="assets/images/coin-9.png" class="obj-5" alt="image">
+                <img src="assets/images/coin-8.png" class="obj-6" alt="image">
+                <img src="assets/images/coin-7.png" class="obj-7" alt="image">
             </div>
             <div class="banner-content">
                 <div class="container">
                     <div class="content-shape">
-                        <img src="assets/images/coin-1.png" class="obj-1" alt="image">
-                        <img src="assets/images/coin-3.png" class="obj-2" alt="image">
-                        <img src="assets/images/coin-3.png" class="obj-3" alt="image">
-                        <img src="assets/images/coin-4.png" class="obj-4" alt="image">
+                        <img src="assets/images/coin-1.png" class="obj-8" alt="image">
                     </div>
                     <div class="row">
                         <div class="col-lg-6 col-md-10">
                             <div class="main-content">
-                                <div class="top-area section-text">
-                                    <h4 class="sub-title">Bet & Win Today!</h4>
-                                    <h1 class="title">Sports Escrow Bets Peer 2 Peer</h1>
-                                    <p class="xlr">The fastest, easiest way to bet on sports.NBA, Tennis & Soccer,
-                                        Choose on which team to bet and win</p>
+                                <h1>Soccer Bet </h1>
+                                <div class="breadcrumb-area">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb d-flex align-items-center">
+                                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Soccer Bet</li>
+                                        </ol>
+                                    </nav>
                                 </div>
-                                <div class="bottom-area">
-                                    <span class="btn-border">
-                                        <button type="button" class="cmn-btn reg" data-bs-toggle="modal" data-bs-target="#loginMod">
-                                            Get Start Now
-                                        </button>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="counter-section">
-            <div class="container">
-                <div class="row cus-mar">
-                    <div class="col-xl-4 col-md-6">
-                        <div class="single-area d-flex align-items-center">
-                            <div class="img-area">
-                                <img src="assets/images/icon/counter-icon-1.png" alt="image">
-                            </div>
-                            <div class="text-area">
-                                <h3 class="m-none"><span>€</span><span class="counter">1304,941</span></h3>
-                                <p>Paid Out Prize in Total</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="single-area d-flex align-items-center">
-                            <div class="img-area">
-                                <img src="assets/images/icon/counter-icon-2.png" alt="image">
-                            </div>
-                            <div class="text-area">
-                                <h3 class="m-none"><span class="counter">76,752</span></h3>
-                                <p>Winners</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-6">
-                        <div class="single-area d-flex align-items-center">
-                            <div class="img-area">
-                                <img src="assets/images/icon/counter-icon-3.png" alt="image">
-                            </div>
-                            <div class="text-area">
-                                <h3 class="m-none"><span class="counter">4,392</span></h3>
-                                <p>Players online</p>
                             </div>
                         </div>
                     </div>
@@ -381,179 +348,50 @@
     </section>
     <!-- Banner Section end -->
 
-    <!-- About bitbetio start -->
-    <section class="about-bitbetio">
-        <div class="overlay pt-120 pb-120">
-            <div class="shape-area">
-                <img src="assets/images/crypto-fanus-1.png" class="obj-1" alt="image">
-                <img src="assets/images/crypto-fanus-2.png" class="obj-2" alt="image">
-            </div>
+    <!-- All Soccer Bets start -->
+    <section class="bet-this-game all-soccer-bets">
+        <div class="overlay pb-120">
             <div class="container">
-                <div class="row d-flex align-items-end">
-                    <div class="col-lg-6">
-                        <div class="image-area d-rtl left-side">
-                            <img src="assets/images/about-bitbetio-image.png" alt="images" class="max-un">
-                        </div>
+                <div class="filter-section mb-60">
+                    <div class="section-text text-center">
+                        <h3>All Soccer Bets</h3>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="section-text">
-                            <h5 class="sub-title">A Next-Level Sports Betting</h5>
-                            <h2 class="title">A Revolution in Online Betting</h2>
-                            <p>Bitbetio is a user-friendly, decentralised, peer-to-peer betting platform.</p>
-                        </div>
-                        <div class="row cus-mar">
-                            <div class="col-sm-6 col-6">
-                                <div class="single-item">
-                                    <img src="assets/images/icon/about-icon-1.png" alt="images">
-                                    <h5>Peer-to-peer</h5>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6">
+                                <div class="input-area">
+                                    <img src="assets/images/icon/search-icon.png" alt="icon">
+                                    <input type="text" placeholder="Search by League name">
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-6">
-                                <div class="single-item">
-                                    <img src="assets/images/icon/about-icon-2.png" alt="images">
-                                    <h5>No limits</h5>
+                            <div class="col-xl-3 col-lg-6">
+                                <div class="single-input">
+                                    <select>
+                                        <option>Search by team name</option>
+                                        <option value="2">Team 1</option>
+                                        <option value="3">Team 2</option>
+                                        <option value="4">Team 3</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-6">
-                                <div class="single-item">
-                                    <img src="assets/images/icon/about-icon-3.png" alt="images">
-                                    <h5>Decentralised</h5>
+                            <div class="col-xl-3 col-lg-6">
+                                <div class="single-input">
+                                    <select>
+                                        <option>Select League</option>
+                                        <option value="1">League 1</option>
+                                        <option value="2">League 2</option>
+                                        <option value="3">League 3</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="col-sm-6 col-6">
-                                <div class="single-item">
-                                    <img src="assets/images/icon/about-icon-4.png" alt="images">
-                                    <h5>Community-powered</h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- About bitbetio end -->
-
-    <!-- How it Works start -->
-    <section class="how-it-works">
-        <div class="overlay pt-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="section-header text-center">
-                            <h5 class="sub-title">Get to Know</h5>
-                            <h2 class="title">How Bitbetio Works?</h2>
-                            <p>Our platform has been designed from the ground up to be tailored to the unique form of
-                                betting and settlement offered by the blockchain. Follow these simple steps and make
-                                profits!</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="main-content">
-                    <div class="row justify-content-between align-items-center">
-                        <div class="col-lg-5">
-                            <ul class="nav" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <h5 class="nav-link active" id="sport-tab" data-bs-toggle="tab"
-                                        data-bs-target="#sport" role="tab" aria-controls="sport" aria-selected="true">
-                                        <span class="image-area">
-                                            <img src="assets/images/icon/how-works-icon-1.png" alt="icon">
-                                        </span>
-                                        Choose a sport
-                                    </h5>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h5 class="nav-link" id="match-tab" data-bs-toggle="tab" data-bs-target="#match"
-                                        role="tab" aria-controls="match" aria-selected="false">
-                                        <span class="image-area">
-                                            <img src="assets/images/icon/how-works-icon-2.png" alt="icon">
-                                        </span>
-                                        Choose a match
-                                    </h5>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h5 class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team"
-                                        role="tab" aria-controls="team" aria-selected="false">
-                                        <span class="image-area">
-                                            <img src="assets/images/icon/how-works-icon-3.png" alt="icon">
-                                        </span>
-                                        Choose your team
-                                    </h5>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h5 class="nav-link" id="odds-tab" data-bs-toggle="tab" data-bs-target="#odds"
-                                        role="tab" aria-controls="odds" aria-selected="false">
-                                        <span class="image-area">
-                                            <img src="assets/images/icon/how-works-icon-4.png" alt="icon">
-                                        </span>
-                                        Choose your odds
-                                    </h5>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <h5 class="nav-link" id="amount-tab" data-bs-toggle="tab" data-bs-target="#amount"
-                                        role="tab" aria-controls="amount" aria-selected="false">
-                                        <span class="image-area">
-                                            <img src="assets/images/icon/how-works-icon-5.png" alt="icon">
-                                        </span>
-                                        Choose your amount
-                                    </h5>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="sport" role="tabpanel"
-                                    aria-labelledby="sport-tab">
-                                    <h4>Select a Sport</h4>
-                                    <div class="img-area">
-                                        <img src="assets/images/process-img-1.png" alt="image">
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="match" role="tabpanel" aria-labelledby="match-tab">
-                                    <h4>Select a Match</h4>
-                                    <div class="img-area">
-                                        <img src="assets/images/process-img-2.png" alt="image">
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
-                                    <h4>Select a Team</h4>
-                                    <div class="img-area">
-                                        <img src="assets/images/process-img-3.png" alt="image">
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="odds" role="tabpanel" aria-labelledby="odds-tab">
-                                    <h4>Select Odds</h4>
-                                    <div class="img-area">
-                                        <img src="assets/images/process-img-4.png" alt="image">
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="amount" role="tabpanel" aria-labelledby="amount-tab">
-                                    <h4>Select Bet Amount </h4>
-                                    <div class="img-area">
-                                        <img src="assets/images/process-img-5.png" alt="image">
-                                    </div>
+                            <div class="col-xl-3 col-lg-6">
+                                <div class="input-area">
+                                    <img src="assets/images/icon/date-icon.png" alt="icon">
+                                    <input type="text" id="dateSelect" placeholder="Select Date">
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- How it Works end -->
-
-    <!-- Bet This Game start -->
-    <section class="bet-this-game">
-        <div class="overlay pt-120 pb-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="section-header text-center">
-                            <h5 class="sub-title">Sports Escrow Bets Peer 2 Peer</h5>
-                            <h2 class="title">Bets in This Game</h2>
-                            <p>Use the power of Bitbetio Bets Fast, Anonymous, Secured, Automatic, Trustworthy</p>
-                        </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="row cus-mar">
                     <div class="col-lg-6">
@@ -847,17 +685,31 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
-                        <div class="bottom-area mt-60">
-                            <span class="btn-border">
-                                <a href="soccer-bets-2.html" class="cmn-btn">Browse More</a>
-                            </span>
-                        </div>
+                        <nav aria-label="Page navigation" class="d-flex justify-content-center mt-60">
+                            <ul class="pagination justify-content-center align-items-center">
+                                <li class="page-item">
+                                    <a class="page-btn previous" href="javascript:void(0)" aria-label="Previous">
+                                        <img src="assets/images/icon/arrow-left.png" alt="icon">
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link xlr" href="javascript:void(0)">1</a></li>
+                                <li class="page-item"><a class="page-link xlr active" href="javascript:void(0)">2</a>
+                                </li>
+                                <li class="page-item"><a class="page-link xlr" href="javascript:void(0)">3</a></li>
+                                <li class="page-item"><a class="page-link xlr" href="javascript:void(0)">4</a></li>
+                                <li class="page-item">
+                                    <a class="page-btn next" href="javascript:void(0)" aria-label="Next">
+                                        <img src="assets/images/icon/arrow-right.png" alt="icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Bet This Game end -->
+    <!-- All Soccer Bets end -->
 
     <!-- Betpop Up Modal start -->
     <div class="betpopmodal">
@@ -958,115 +810,143 @@
     </div>
     <!-- Betpop Up Modal end -->
 
-    <!-- Amazing Features start -->
-    <section class="amazing-features">
-        <div class="overlay pt-120">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <div class="section-header text-center">
-                            <h5 class="sub-title">Leading the Crypto bets escrow services</h5>
-                            <h2 class="title">An Exhaustive list of Amazing Features</h2>
-                            <p>Bitbetio is the most advanced sports crypto beting platform and highest stakes across
-                                multiple bookmakers and exchanges.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="features-carousel">
-                    <div class="single-slide">
-                        <div class="slide-content">
-                            <div class="icon-area">
-                                <img src="assets/images/icon/amazing-features-icon-1.png" alt="icon">
-                            </div>
-                            <h5>Safety</h5>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="slide-content">
-                            <div class="icon-area">
-                                <img src="assets/images/icon/amazing-features-icon-2.png" alt="icon">
-                            </div>
-                            <h5>Transparency</h5>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="slide-content">
-                            <div class="icon-area">
-                                <img src="assets/images/icon/amazing-features-icon-3.png" alt="icon">
-                            </div>
-                            <h5>Low Commissions</h5>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="slide-content">
-                            <div class="icon-area">
-                                <img src="assets/images/icon/amazing-features-icon-4.png" alt="icon">
-                            </div>
-                            <h5>Player is king</h5>
-                        </div>
-                    </div>
-                    <div class="single-slide">
-                        <div class="slide-content">
-                            <div class="icon-area">
-                                <img src="assets/images/icon/amazing-features-icon-3.png" alt="icon">
-                            </div>
-                            <h5>Low Commissions</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Amazing Features end -->
-
-    <!-- More Features start -->
-    <section class="more-features">
+    <!-- How it Works start -->
+    <section class="how-it-works">
         <div class="overlay pt-120 pb-120">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-0 order-1">
-                        <div class="img-area">
-                            <img src="assets/images/more-features-image.png" alt="image">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="section-header text-center">
+                            <h5 class="sub-title">Get to Know</h5>
+                            <h2 class="title">How Bitbetio Works?</h2>
+                            <p>Our platform has been designed from the ground up to be tailored to the unique form of
+                                betting and settlement offered by the blockchain. Follow these simple steps and make
+                                profits!</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="section-header">
-                            <h5 class="sub-title">A new betting world</h5>
-                            <h2 class="title">Bets on future currencies prices between users</h2>
-                            <p>Cutting out bookmakers, opens a new betting experience for players.</p>
+                </div>
+                <div class="main-content">
+                    <div class="row justify-content-between align-items-center">
+                        <div class="col-lg-5">
+                            <ul class="nav" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <h5 class="nav-link active" id="sport-tab" data-bs-toggle="tab"
+                                        data-bs-target="#sport" role="tab" aria-controls="sport" aria-selected="true">
+                                        <span class="image-area">
+                                            <img src="assets/images/icon/how-works-icon-1.png" alt="icon">
+                                        </span>
+                                        Choose a sport
+                                    </h5>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h5 class="nav-link" id="match-tab" data-bs-toggle="tab" data-bs-target="#match"
+                                        role="tab" aria-controls="match" aria-selected="false">
+                                        <span class="image-area">
+                                            <img src="assets/images/icon/how-works-icon-2.png" alt="icon">
+                                        </span>
+                                        Choose a match
+                                    </h5>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h5 class="nav-link" id="team-tab" data-bs-toggle="tab" data-bs-target="#team"
+                                        role="tab" aria-controls="team" aria-selected="false">
+                                        <span class="image-area">
+                                            <img src="assets/images/icon/how-works-icon-3.png" alt="icon">
+                                        </span>
+                                        Choose your team
+                                    </h5>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h5 class="nav-link" id="odds-tab" data-bs-toggle="tab" data-bs-target="#odds"
+                                        role="tab" aria-controls="odds" aria-selected="false">
+                                        <span class="image-area">
+                                            <img src="assets/images/icon/how-works-icon-4.png" alt="icon">
+                                        </span>
+                                        Choose your odds
+                                    </h5>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <h5 class="nav-link" id="amount-tab" data-bs-toggle="tab" data-bs-target="#amount"
+                                        role="tab" aria-controls="amount" aria-selected="false">
+                                        <span class="image-area">
+                                            <img src="assets/images/icon/how-works-icon-5.png" alt="icon">
+                                        </span>
+                                        Choose your amount
+                                    </h5>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="content-area">
-                            <div class="single-item">
-                                <div class="image-area">
-                                    <img src="assets/images/icon/more-features-icon-1.png" alt="image">
+                        <div class="col-lg-6">
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active" id="sport" role="tabpanel"
+                                    aria-labelledby="sport-tab">
+                                    <h4>Select a Sport</h4>
+                                    <div class="img-area">
+                                        <img src="assets/images/process-img-1.png" alt="image">
+                                    </div>
                                 </div>
-                                <div class="text-area">
-                                    <h5>Pool Bets</h5>
-                                    <p>Players bet on their predicted outcomes and all stakes go into a single pool.
-                                        Winners share the pool. The odds are dynamic and depend on the number of
-                                        participants and the amounts they wagered.</p>
+                                <div class="tab-pane fade" id="match" role="tabpanel" aria-labelledby="match-tab">
+                                    <h4>Select a Match</h4>
+                                    <div class="img-area">
+                                        <img src="assets/images/process-img-2.png" alt="image">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="team" role="tabpanel" aria-labelledby="team-tab">
+                                    <h4>Select a Team</h4>
+                                    <div class="img-area">
+                                        <img src="assets/images/process-img-3.png" alt="image">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="odds" role="tabpanel" aria-labelledby="odds-tab">
+                                    <h4>Select Odds</h4>
+                                    <div class="img-area">
+                                        <img src="assets/images/process-img-4.png" alt="image">
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="amount" role="tabpanel" aria-labelledby="amount-tab">
+                                    <h4>Select Bet Amount </h4>
+                                    <div class="img-area">
+                                        <img src="assets/images/process-img-5.png" alt="image">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="single-item">
-                                <div class="image-area">
-                                    <img src="assets/images/icon/more-features-icon-2.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="counter-section">
+                <div class="container pt-120">
+                    <div class="row cus-mar">
+                        <div class="col-xl-4 col-md-6">
+                            <div class="single-area d-flex align-items-center">
+                                <div class="img-area">
+                                    <img src="assets/images/icon/counter-icon-1.png" alt="image">
                                 </div>
                                 <div class="text-area">
-                                    <h5>Head to head betting</h5>
-                                    <p>The purest form of peer-to-peer betting. One player opens the bet and defines the
-                                        odds and another player matches the bet. Players are not bound by unfavourable,
-                                        centrally-defined odds.</p>
+                                    <h3 class="m-none"><span>€</span><span class="counter">1304,941</span></h3>
+                                    <p>Paid Out Prize in Total</p>
                                 </div>
                             </div>
-                            <div class="single-item">
-                                <div class="image-area">
-                                    <img src="assets/images/icon/more-features-icon-3.png" alt="image">
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="single-area d-flex align-items-center">
+                                <div class="img-area">
+                                    <img src="assets/images/icon/counter-icon-2.png" alt="image">
                                 </div>
                                 <div class="text-area">
-                                    <h5>Multi- Player Bets</h5>
-                                    <p>High rollers can wager large amounts by offering bets that can be partially
-                                        matched by multiple players. Similar to head-to-head bets, the odds are defined
-                                        by the player who opens the bet.</p>
+                                    <h3 class="m-none"><span class="counter">76,752</span></h3>
+                                    <p>Winners</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6">
+                            <div class="single-area d-flex align-items-center">
+                                <div class="img-area">
+                                    <img src="assets/images/icon/counter-icon-3.png" alt="image">
+                                </div>
+                                <div class="text-area">
+                                    <h3 class="m-none"><span class="counter">4,392</span></h3>
+                                    <p>Players online</p>
                                 </div>
                             </div>
                         </div>
@@ -1075,7 +955,7 @@
             </div>
         </div>
     </section>
-    <!-- More Features end -->
+    <!-- How it Works end -->
 
     <!-- FAQs In start -->
     <section class="faqs-section">
@@ -1332,7 +1212,9 @@
                     <div class="col-12">
                         <div class="copyright">
                             <div class="copy-area">
-                                <p> Copyright © <a href="/">BetPeer</a> | 2022
+                                <p> Copyright © <a href="index.html">Bitbetio</a> | Designed by
+                                    <a href="https://themeforest.net/user/pixelaxis" class="auth">Pixelaxis</a>
+                                </p>
                             </div>
                             <div class="social-link d-flex align-items-center">
                                 <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
