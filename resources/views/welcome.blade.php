@@ -1,126 +1,6 @@
-<!doctype html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peer to Peer Betting</title>
-
-    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/plugin/nice-select.css">
-    <link rel="stylesheet" href="assets/css/plugin/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/plugin/slick.css">
-    <link rel="stylesheet" href="assets/css/arafat-font.css">
-    <link rel="stylesheet" href="assets/css/plugin/animate.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
-    
-</head>
-
-<body>
-    <!-- start preloader -->
-    <div class="preloader" id="preloader"></div>
-    <!-- end preloader -->
-
-    <!-- Scroll To Top Start-->
-    <a href="javascript:void(0)" class="scrollToTop"><i class="fas fa-angle-double-up"></i></a>
-    <!-- Scroll To Top End -->
-
-    <!-- header-section start -->
-    <header class="header-section">
-        <div class="overlay">
-            <div class="container">
-                <div class="row d-flex header-area">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo.png" class="logo" alt="logo">
-                        </a>
-                        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbar-content">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
-                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                                </li>
-                                <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
-                                    <ul class="dropdown-menu main-menu shadow">
-                                        <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
-                                        <li class="dropend sub-navbar">
-                                            <a href="javascript:void(0)" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                              data-bs-auto-close="outside">Setting</a>
-                                            <ul class="dropdown-menu sub-menu shadow">
-                                                <li><a class="nav-link" href="personal-details-setting.html">Personal Details</a></li>
-                                                <li><a class="nav-link" href="modify-login-password.html">Change Password</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
-                                    <ul class="dropdown-menu main-menu shadow">
-                                        <li><a class="nav-link" href="soccer-bets-2.html">Tennis</a></li>
-                                        <li><a class="nav-link" href="soccer-bets-1.html">Soccer</a></li>
-                                        <li><a class="nav-link" href="soccer-bets-2.html">NBA</a></li>
-                                    </ul>
-                                </li>
-                                
-                                <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
-                                        data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
-                                    <ul class="dropdown-menu main-menu shadow">
-                                        <li class="dropend sub-navbar">
-                                            <a href="javascript:void(0)" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                              data-bs-auto-close="outside">Tournaments</a>
-                                            <ul class="dropdown-menu sub-menu shadow">
-                                                <li><a class="nav-link" href="tournaments.html">Tournaments</a></li>
-                                                <li><a class="nav-link" href="tournaments-details.html">Tournaments Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="dropend sub-navbar">
-                                            <a href="javascript:void(0)" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
-                                              data-bs-auto-close="outside">Blog</a>
-                                            <ul class="dropdown-menu sub-menu shadow">
-                                                <li><a class="nav-link" href="blog.html">Blog</a></li>
-                                                <li><a class="nav-link" href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="nav-link" href="affiliate.html">Affiliate</a></li>
-                                        <li><a class="nav-link" href="faqs.html">Faqs</a></li>
-                                        <li><a class="nav-link" href="privacy-policy.html">Privacy Policy</a></li>
-                                        <li><a class="nav-link" href="terms-conditions.html">Terms Conditions</a></li>
-                                        <li><a class="nav-link" href="error.html">Error</a></li>
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
-                                </li>
-                            </ul>
-                            <div class="right-area header-action d-flex align-items-center max-un">
-                                <button type="button" class="login" data-bs-toggle="modal" data-bs-target="#loginMod">
-                                    Login
-                                </button>
-                                <button type="button" class="cmn-btn reg" data-bs-toggle="modal" data-bs-target="#loginMod">
-                                    Sign Up
-                                </button>
-                            </div>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- header-section end -->
-
+   <x-layout>
+  
     <!-- Login Registration start -->
     <div class="log-reg">
         <div class="container">
@@ -348,7 +228,7 @@
                                 <img src="assets/images/icon/counter-icon-1.png" alt="image">
                             </div>
                             <div class="text-area">
-                                <h3 class="m-none"><span>€</span><span class="counter">1304,941</span></h3>
+                                <h3 class="m-none"><span>Ksh</span><span class="counter">100,941</span></h3>
                                 <p>Paid Out Prize in Total</p>
                             </div>
                         </div>
@@ -399,7 +279,7 @@
                         <div class="section-text">
                             <h5 class="sub-title">A Next-Level Sports Betting</h5>
                             <h2 class="title">A Revolution in Online Betting</h2>
-                            <p>Bitbetio is a user-friendly, decentralised, peer-to-peer betting platform.</p>
+                            <p>BetPeer is a user-friendly, decentralised, peer-to-peer betting platform.</p>
                         </div>
                         <div class="row cus-mar">
                             <div class="col-sm-6 col-6">
@@ -442,9 +322,9 @@
                     <div class="col-lg-8">
                         <div class="section-header text-center">
                             <h5 class="sub-title">Get to Know</h5>
-                            <h2 class="title">How Bitbetio Works?</h2>
+                            <h2 class="title">How BetPeer Works?</h2>
                             <p>Our platform has been designed from the ground up to be tailored to the unique form of
-                                betting and settlement offered by the blockchain. Follow these simple steps and make
+                                betting and settlement. Follow these simple steps and make
                                 profits!</p>
                         </div>
                     </div>
@@ -551,7 +431,7 @@
                         <div class="section-header text-center">
                             <h5 class="sub-title">Sports Escrow Bets Peer 2 Peer</h5>
                             <h2 class="title">Bets in This Game</h2>
-                            <p>Use the power of Bitbetio Bets Fast, Anonymous, Secured, Automatic, Trustworthy</p>
+                            <p>Use the power of BetPeer Bets Fast, Anonymous ,Automatic, Trustworthy</p>
                         </div>
                     </div>
                 </div>
@@ -1265,103 +1145,4 @@
     </section>
     <!-- FAQs In end -->
 
-    <!-- Affilliate start -->
-    <section class="affilliate-section">
-        <div class="overlay pt-120">
-            <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-lg-5 order-lg-0 order-1">
-                        <div class="img-area d-rtl">
-                            <img src="assets/images/affilliate-image.png" alt="image" class="max-un">
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="section-text">
-                            <h5 class="sub-title">Join forces with Bitbetio</h5>
-                            <h2 class="title">Earn As Our Affilliate</h2>
-                            <p>Join the program and gain up to 50% revshare! Are you an experienced affiliate, and would
-                                like to set up your own rules? We are happy to get to know your offer. Partner with us
-                                and earn as your referrals start playing!</p>
-                        </div>
-                        <div class="bottom-area">
-                            <div class="btn-border d-inline-block">
-                                <a href="affiliate.html" class="cmn-btn">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Affilliate end -->
-
-    <!-- Footer Area Start -->
-    <footer class="footer-section">
-        <div class="container pt-120">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="newsletter">
-                        <div class="section-text text-center">
-                            <h5 class="sub-title">Subscribe Us</h5>
-                            <h3 class="title">For Newsletter</h3>
-                            <p>Subscribe to our newsletter to receive all the latest news and updates</p>
-                        </div>
-                        <form action="#">
-                            <div class="form-group d-flex align-items-center">
-                                <input type="text" placeholder="Enter your email Address">
-                                <button><img src="assets/images/icon/arrow-right-2.png" alt="icon"></button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-area pt-120">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="menu-item">
-                            <a href="index.html" class="logo">
-                                <img src="assets/images/logo.png" alt="logo">
-                            </a>
-                            <ul class="footer-link">
-                                <li><a href="contact.html">Contact</a></li>
-                                <li><a href="terms-conditions.html">Terms of Services</a></li>
-                                <li><a href="privacy-policy.html">Privacy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="copyright">
-                            <div class="copy-area">
-                                <p> Copyright © <a href="/">BetPeer</a> | 2022
-                            </div>
-                            <div class="social-link d-flex align-items-center">
-                                <a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
-                                <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
-                                <a href="javascript:void(0)"><i class="fab fa-linkedin-in"></i></a>
-                                <a href="javascript:void(0)"><i class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
-
-    <!--==================================================================-->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery-ui.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/fontawesome.js"></script>
-    <script src="assets/js/plugin/slick.js"></script>
-    <script src="assets/js/plugin/jquery.nice-select.min.js"></script>
-    <script src="assets/js/plugin/jquery.downCount.js"></script>
-    <script src="assets/js/plugin/counter.js"></script>
-    <script src="assets/js/plugin/waypoint.min.js"></script>
-    <script src="assets/js/plugin/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/plugin/wow.min.js"></script>
-    <script src="assets/js/plugin/plugin.js"></script>
-    <script src="assets/js/main.js"></script>
-</body>
-
-</html>
+</x-layout>
