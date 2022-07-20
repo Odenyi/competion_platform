@@ -45,7 +45,7 @@
                             <p>Oops.. Looks like you got lost :(</p>
                         </div>
                         <div class="btn-border">
-                            <a href="index.html" class="cmn-btn">Go Back Home</a>
+                            <a href="/" class="cmn-btn">Go Back Home</a>
                         </div>
                     </div>
                 </div>

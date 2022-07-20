@@ -1,4 +1,4 @@
-<x-layout>
+<x-dashboard>
     <!-- Dashboard Content Section start -->
     <section class="dashboard-content pt-120">
         <div class="overlay">
@@ -1064,4 +1064,4 @@
     </div>
     <!-- Betpop Up Modal end -->
 
-    </x-layout>
+    </x-dashboard>

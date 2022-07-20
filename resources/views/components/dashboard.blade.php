@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Peer to Peer Betting</title>
+    <title>Bitbetio - HTML Template</title>
 
-    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <link rel="stylesheet" href="assets/css/plugin/nice-select.css">
     <link rel="stylesheet" href="assets/css/plugin/magnific-popup.css">
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
     
     <!-- alpine js to show dynamic pop up and flash messages -->
-    <script src="//unpkg.com/alpinejs" defer></script>
+     <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 
 <body>
@@ -34,13 +35,13 @@
     <!-- Scroll To Top End -->
 
     <!-- header-section start -->
-    <header class="header-section">
+    <header class="header-section user-dashboard">
         <div class="overlay">
             <div class="container">
                 <div class="row d-flex header-area">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/favicon.ico" class="logo" alt="logo">
+                            <img src="assets/images/logo.png" class="logo" alt="logo">
                         </a>
                         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbar-content">
@@ -48,12 +49,11 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
                             <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                                <li class="nav-item ">
-                                    <a class="nav-link @yield('Home')" aria-current="page" href="/">Home</a>
+                                <li class="nav-item">
+                                    <a class="nav-link" aria-current="page" href="/">Home</a>
                                 </li>
-                                
                                 <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
+                                    <a class="nav-link dropdown-toggle active" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
                                     <ul class="dropdown-menu main-menu shadow">
                                         <li><a class="nav-link" href="/dashboard">Dashboard</a></li>
@@ -68,7 +68,7 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle @yield('Sports')" href="javascript:void(0)"
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
                                     <ul class="dropdown-menu main-menu shadow">
                                         <li><a class="nav-link" href="/soccer-bets-2">Tennis</a></li>
@@ -78,14 +78,14 @@
                                 </li>
                                 
                                 <li class="nav-item dropdown main-navbar">
-                                    <a class="nav-link dropdown-toggle @yield('tournaments')" href="javascript:void(0)"
+                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Pages</a>
                                     <ul class="dropdown-menu main-menu shadow">
                                         <li class="dropend sub-navbar">
-                                            <a href="javascript:void(0)" class="dropdown-item dropdown-toggle " data-bs-toggle="dropdown"
+                                            <a href="javascript:void(0)" class="dropdown-item dropdown-toggle" data-bs-toggle="dropdown"
                                               data-bs-auto-close="outside">Tournaments</a>
                                             <ul class="dropdown-menu sub-menu shadow">
-                                                <li><a class="nav-link " href="/tournaments">Tournaments</a></li>
+                                                <li><a class="nav-link" href="/tournaments">Tournaments</a></li>
                                                 <li><a class="nav-link" href="/tournaments-details">Tournaments Details</a></li>
                                             </ul>
                                         </li>
@@ -105,16 +105,127 @@
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link @yield('Contact')" href="/contact">Contact</a>
+                                    <a class="nav-link" href="/contact">Contact</a>
                                 </li>
                             </ul>
                             <div class="right-area header-action d-flex align-items-center max-un">
-                                <button type="button" class="login" data-bs-toggle="modal" data-bs-target="#loginMod">
-                                    Login
-                                </button>
-                                <button type="button" class="cmn-btn reg" data-bs-toggle="modal" data-bs-target="#loginMod">
-                                    Sign Up
-                                </button>
+                                <div class="single-item">
+                                    <select>
+                                        <option value="1">EN</option>
+                                        <option value="1">BN</option>
+                                        <option value="1">DA</option>
+                                    </select>
+                                </div>
+                                <div class="single-item notifications-area">
+                                    <div class="notifications-btn active-dot">
+                                        <img src="assets/images/icon/notifications.png" alt="icon">
+                                        <span class="items">3</span>
+                                    </div>
+                                    <div class="main-area notifications-content">
+                                        <div class="head-area d-flex justify-content-between">
+                                            <div class="left d-flex align-items-center">
+                                                <h5>Notifications</h5>
+                                                <span class="mdr">03</span>
+                                            </div>
+                                            <button class="clear-all">
+                                                <img src="assets/images/icon/cancel-btn.png" alt="icon">
+                                            </button>
+                                        </div>
+                                        <ul>
+                                            <li class="border-area">
+                                                <a href="javascript:void(0)">
+                                                    <div class="img-area">
+                                                        <img src="assets/images/latest-tips-1.png" alt="image">
+                                                    </div>
+                                                    <div class="text-area">
+                                                        <h6>Della Parker</h6>
+                                                        <p class="mdr">+2736 Profit on Horse Racing</p>
+                                                        <p class="mdr time-area">04:20 PM</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)" class="active">
+                                                    <div class="img-area">
+                                                        <img src="assets/images/latest-tips-2.png" alt="image">
+                                                    </div>
+                                                    <div class="text-area">
+                                                        <h6>Terasa Estrada</h6>
+                                                        <p class="mdr">+2534 Profit on Football</p>
+                                                        <p class="mdr time-area">03:17 PM</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <div class="img-area">
+                                                        <img src="assets/images/latest-tips-3.png" alt="image">
+                                                    </div>
+                                                    <div class="text-area">
+                                                        <h6>Tyler Bell</h6>
+                                                        <p class="mdr">+2534 Profit on Football</p>
+                                                        <p class="mdr time-area">05:33 PM</p>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="single-item user-area">
+                                    <div class="user-btn d-flex align-items-center">
+                                        <span class="user-profile">
+                                            <img src="assets/images/dashboard-profile-1.png" alt="icon">
+                                        </span>
+                                        <span class="name-area">Jonh</span>
+                                        <i class="icon-c-down-arrow"></i>
+                                    </div>
+                                    <div class="main-area user-content">
+                                        <div class="head-area d-flex">
+                                            <div class="img-area">
+                                                <img src="assets/images/dashboard-profile-2.png" alt="icon">
+                                            </div>
+                                            <div class="text-area">
+                                                <h5>John Doe</h5>
+                                                <div class="d-flex align-items-center">
+                                                    <img src="assets/images/icon/calendar-icon-2.png" alt="icon">
+                                                    <span>Joined Oct, 2021</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="border-area">
+                                                <a href="javascript:void(0)" class="active">
+                                                    <img src="assets/images/icon/dashboard-icon.png" alt="icon">
+                                                    <p class="mdr">Dashboard</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="assets/images/icon/subscriptions-icon.png" alt="icon">
+                                                    <p class="mdr">My Subscriptions</p>
+                                                </a>
+                                            </li>
+                                            <li class="border-area">
+                                                <a href="javascript:void(0)">
+                                                    <img src="assets/images/icon/settings-icon.png" alt="icon">
+                                                    <p class="mdr">Accountring Settings</p>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)">
+                                                    <img src="assets/images/icon/memberships-icon.png" alt="icon">
+                                                    <p class="mdr">Manage Memberships</p>
+                                                </a>
+                                            </li>
+                                            <li class="border-area">
+                                                <a href="javascript:void(0)">
+                                                    <img src="assets/images/icon/history-icon.png" alt="icon">
+                                                    <p class="mdr">Transaction History</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </nav>
@@ -123,12 +234,11 @@
         </div>
     </header>
     <!-- header-section end -->
-      
-      
+
     {{$slot}}
 
-    <!-- Footer Area Start -->
-    <footer class="footer-section">
+     <!-- Footer Area Start -->
+     <footer class="footer-section">
         <div class="container pt-120">
             <div class="row justify-content-center">
                 <div class="col-lg-10">

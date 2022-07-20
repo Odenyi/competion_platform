@@ -1,6 +1,6 @@
 
    <x-layout>
-  
+   @section('Home', 'active')
     <!-- Login Registration start -->
     <div class="log-reg">
         <div class="container">
