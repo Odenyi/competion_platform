@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bitbetio - HTML Template</title>
+    <title>BetPeer</title>
 
     <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -41,7 +41,7 @@
                 <div class="row d-flex header-area">
                     <nav class="navbar navbar-expand-lg navbar-light">
                         <a class="navbar-brand" href="index.html">
-                            <img src="assets/images/logo.png" class="logo" alt="logo">
+                            <img src="" class="logo" alt="logo">
                         </a>
                         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbar-content">
@@ -176,7 +176,7 @@
                                         <span class="user-profile">
                                             <img src="assets/images/dashboard-profile-1.png" alt="icon">
                                         </span>
-                                        <span class="name-area">Jonh</span>
+                                        <span class="name-area">Brian</span>
                                         <i class="icon-c-down-arrow"></i>
                                     </div>
                                     <div class="main-area user-content">
@@ -185,10 +185,10 @@
                                                 <img src="assets/images/dashboard-profile-2.png" alt="icon">
                                             </div>
                                             <div class="text-area">
-                                                <h5>John Doe</h5>
+                                                <h5>Brian Odenyi</h5>
                                                 <div class="d-flex align-items-center">
                                                     <img src="assets/images/icon/calendar-icon-2.png" alt="icon">
-                                                    <span>Joined Oct, 2021</span>
+                                                    <span>Joined July, 2022</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -208,15 +208,10 @@
                                             <li class="border-area">
                                                 <a href="javascript:void(0)">
                                                     <img src="assets/images/icon/settings-icon.png" alt="icon">
-                                                    <p class="mdr">Accountring Settings</p>
+                                                    <p class="mdr">Account Settings</p>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="javascript:void(0)">
-                                                    <img src="assets/images/icon/memberships-icon.png" alt="icon">
-                                                    <p class="mdr">Manage Memberships</p>
-                                                </a>
-                                            </li>
+                                            
                                             <li class="border-area">
                                                 <a href="javascript:void(0)">
                                                     <img src="assets/images/icon/history-icon.png" alt="icon">
@@ -262,7 +257,7 @@
                     <div class="col-xl-12">
                         <div class="menu-item">
                             <a href="index.html" class="logo">
-                                <img src="assets/images/logo.png" alt="logo">
+                                <img src="" alt="logo">
                             </a>
                             <ul class="footer-link">
                                 <li><a href="contact.html">Contact</a></li>

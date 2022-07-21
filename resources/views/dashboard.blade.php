@@ -27,11 +27,7 @@
                                         data-bs-target="#withdraw" type="button" role="tab" aria-controls="withdraw"
                                         aria-selected="false">withdraw</button>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="buy-crypto-tab" data-bs-toggle="tab"
-                                        data-bs-target="#buy-crypto" type="button" role="tab" aria-controls="buy-crypto"
-                                        aria-selected="false">buy crypto</button>
-                                </li>
+                               
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="affiliate-tab" data-bs-toggle="tab"
                                         data-bs-target="#affiliate" type="button" role="tab" aria-controls="affiliate"
@@ -482,113 +478,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="buy-crypto" role="tabpanel" aria-labelledby="buy-crypto-tab">
-                                <div class="buy-crypto">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="main-content">
-                                                <h5>Buy cryptocurrency directly to your Bitbetio Account</h5>
-                                                <p>Once payment is completed, your cryptocurrency will be available in
-                                                    your Jugaro account within minutes</p>
-                                                <div class="form-box">
-                                                    <p>1. Choose the crypto you wish to buy, enter the amount, and
-                                                        choose your favorite payment method.</p>
-                                                    <form action="#">
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="input-single">
-                                                                    <label>Buy</label>
-                                                                    <div class="input-area">
-                                                                        <select>
-                                                                            <option value="1">BTC</option>
-                                                                            <option value="2">ETH</option>
-                                                                            <option value="3">LTC</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="input-single">
-                                                                    <label>Payment Methods</label>
-                                                                    <div class="input-area">
-                                                                        <select>
-                                                                            <option value="1">Visa</option>
-                                                                            <option value="2">Credit</option>
-                                                                            <option value="3">Master</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="input-single">
-                                                                    <label>Amount</label>
-                                                                    <div class="input-select d-flex align-items-center">
-                                                                        <input type="text" placeholder="100">
-                                                                        <select>
-                                                                            <option value="1">USD</option>
-                                                                            <option value="2">SGD</option>
-                                                                            <option value="3">AUD</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="table-area">
-                                                    <p>2. Choose the best offer from our payment partners, and complete
-                                                        your purchase.</p>
-                                                    <div class="table-responsive">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Channels</th>
-                                                                    <th scope="col">Arrival Time</th>
-                                                                    <th scope="col">You will get</th>
-                                                                    <th scope="col">Rate ( Fee Included)</th>
-                                                                    <th scope="col">Trade</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <img src="assets/images/icon/buy-crypto-logo-1.png"
-                                                                            alt="icon">
-                                                                    </th>
-                                                                    <td>5-15 mins</td>
-                                                                    <td>0.003091 BTC</td>
-                                                                    <td>39254.59 USD</td>
-                                                                    <td><a href="javascript:void(0)" class="cmn-btn">BUY</a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <img src="assets/images/icon/buy-crypto-logo-1.png"
-                                                                            alt="icon">
-                                                                    </th>
-                                                                    <td>5-15 mins</td>
-                                                                    <td>0.003091 BTC</td>
-                                                                    <td>39254.59 USD</td>
-                                                                    <td><a href="javascript:void(0)" class="cmn-btn">BUY</a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <img src="assets/images/icon/buy-crypto-logo-1.png"
-                                                                            alt="icon">
-                                                                    </th>
-                                                                    <td>5-15 mins</td>
-                                                                    <td>0.003091 BTC</td>
-                                                                    <td>39254.59 USD</td>
-                                                                    <td><a href="javascript:void(0)" class="cmn-btn">BUY</a></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                             <div class="tab-pane fade" id="affiliate" role="tabpanel" aria-labelledby="affiliate-tab">
                                 <div class="affiliate-tab">
                                     <div class="row">
