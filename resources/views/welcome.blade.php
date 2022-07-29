@@ -34,18 +34,7 @@
                                         aria-labelledby="loginArea-tab">
                                         <div class="login-reg-content">
                                             <div class="modal-body">
-                                                <div class="head-area">
-                                                    <h6 class="title">Login Direetly With</h6>
-                                                    <div class="social-link d-flex align-items-center">
-                                                        <a href="javascript:void(0)" class="active"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
-                                                        <a href="javascript:void(0)"><i
-                                                                class="fab fa-linkedin-in"></i></a>
-                                                        <a href="javascript:void(0)"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </div>
-                                                </div>
+                                             
                                                 <div class="form-area">
                                                     <form action="#">
                                                         <div class="row">
@@ -97,39 +86,55 @@
                                         <div class="login-reg-content regMode">
                                             <div class="modal-body">
                                                 <div class="head-area">
-                                                    <h6 class="title">Register On Bitbetio</h6>
-                                                    <div class="social-link d-flex align-items-center">
-                                                        <a href="javascript:void(0)" class="active"><i
-                                                                class="fab fa-facebook-f"></i></a>
-                                                        <a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
-                                                        <a href="javascript:void(0)"><i
-                                                                class="fab fa-linkedin-in"></i></a>
-                                                        <a href="javascript:void(0)"><i
-                                                                class="fab fa-instagram"></i></a>
-                                                    </div>
+                                                    <h6 class="title">Register On BetPeer</h6>
+                                                   
                                                 </div>
                                                 <div class="form-area">
-                                                    <form action="#">
+                                                    <form action="/users" method="POST">
+                                                        @csrf
                                                         <div class="row">
                                                             <div class="col-12">
                                                                 <div class="single-input">
+                                                                    <label for="UserName">User Name</label>
+                                                                    <input type="name" id="UserName" name="name"
+                                                                        placeholder="User Name" value={{old('name')}}>
+                                                                        @error('name')
+                                                                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                        @enderror
+                                                                </div>
+                                                                <div class="single-input">
+                                                                    <label for="regnumber">Phone Number</label>
+                                                                    <input type="number" id="regnumber" name="number"
+                                                                        placeholder="Phone Number" value={{old('number')}}>
+                                                                        @error('number')
+                                                                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                        @enderror
+                                                                </div>
+                                                                <div class="single-input">
                                                                     <label for="regemail">Email</label>
-                                                                    <input type="text" id="regemail"
-                                                                        placeholder="Email Address">
+                                                                    <input type="text" id="regemail" name="email"
+                                                                        placeholder="Email Address" value={{old('email')}}>
+                                                                        @error('email')
+                                                                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                        @enderror
                                                                 </div>
                                                                 <div class="single-input">
                                                                     <label for="regpassword">Password</label>
-                                                                    <input type="text" id="regpassword"
-                                                                        placeholder="Email Password">
+                                                                    <input type="password" id="regpassword" name="password"
+                                                                        placeholder="Password" value={{old('password')}}>
+                                                                        @error('password')
+                                                                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                        @enderror
                                                                 </div>
                                                                 <div class="single-input">
-                                                                    <label>Country</label>
-                                                                    <select>
-                                                                        <option value="1">United States</option>
-                                                                        <option value="2">United Kingdom</option>
-                                                                        <option value="3">Canada</option>
-                                                                    </select>
+                                                                    <label for="regpasswordconfirm">Password confirmation</label>
+                                                                    <input type="password" id="regpasswordconfirm" name="password_confirmation"
+                                                                        placeholder="Password" value={{old('password_confirmation')}}>
+                                                                        @error('password_confirmation')
+                                                                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                        @enderror
                                                                 </div>
+                                                                
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="remember-me">
@@ -138,7 +143,7 @@
                                                                 </div>
                                                             </div>
                                                             <span class="btn-border w-100">
-                                                                <button class="cmn-btn w-100">SIGN UP</button>
+                                                                <button class="cmn-btn w-100" type="submit">SIGN UP</button>
                                                             </span>
                                                         </div>
                                                     </form>
@@ -202,8 +207,8 @@
                             <div class="main-content">
                                 <div class="top-area section-text">
                                     <h4 class="sub-title">Bet & Win Today!</h4>
-                                    <h1 class="title">Sports Escrow Bets Peer 2 Peer</h1>
-                                    <p class="xlr">The fastest, easiest way to bet on sports.NBA, Tennis & Soccer,
+                                    <h1 class="title">BetPeer Peer 2 Peer</h1>
+                                    <p class="xlr">The fastest, easiest way to bet on sports.NBA, Tennis & Football,
                                         Choose on which team to bet and win</p>
                                 </div>
                                 <div class="bottom-area">
@@ -429,7 +434,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Sports Escrow Bets Peer 2 Peer</h5>
+                            <h5 class="sub-title">BetPeer Peer 2 Peer</h5>
                             <h2 class="title">Bets in This Game</h2>
                             <p>Use the power of BetPeer Bets Fast, Anonymous ,Automatic, Trustworthy</p>
                         </div>
@@ -729,7 +734,7 @@
                     <div class="col-lg-12 d-flex justify-content-center">
                         <div class="bottom-area mt-60">
                             <span class="btn-border">
-                                <a href="soccer-bets-2.html" class="cmn-btn">Browse More</a>
+                                <a href="/soccer-bets-2" class="cmn-btn">Browse More</a>
                             </span>
                         </div>
                     </div>
@@ -818,7 +823,7 @@
                                     <div class="bottom-area">
                                         <div class="fee-area">
                                             <p>Winner will get: <span class="amount">0.179</span> ETH</p>
-                                            <p class="fee">Escrow Fee: <span>5%</span></p>
+                                            <p class="fee">BetPeer Fee: <span>5%</span></p>
                                         </div>
                                         <div class="btn-area">
                                             <button>Make (0.1 ETH) Bet</button>
@@ -845,9 +850,9 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
                         <div class="section-header text-center">
-                            <h5 class="sub-title">Leading the Crypto bets escrow services</h5>
+                            <h5 class="sub-title">Leading in Peer to Peer beting services</h5>
                             <h2 class="title">An Exhaustive list of Amazing Features</h2>
-                            <p>Bitbetio is the most advanced sports crypto beting platform and highest stakes across
+                            <p>BetPeer is the most advanced sports peer to peer beting platform and highest stakes across
                                 multiple bookmakers and exchanges.</p>
                         </div>
                     </div>
@@ -912,7 +917,7 @@
                     <div class="col-lg-6">
                         <div class="section-header">
                             <h5 class="sub-title">A new betting world</h5>
-                            <h2 class="title">Bets on future currencies prices between users</h2>
+                            <h2 class="title">Bet between users</h2>
                             <p>Cutting out bookmakers, opens a new betting experience for players.</p>
                         </div>
                         <div class="content-area">
@@ -966,7 +971,7 @@
                         <div class="section-header text-center">
                             <h5 class="sub-title">Frequently Asked Questions</h5>
                             <h2 class="title">If you have questions we have answer</h2>
-                            <p>Answers for our most popular questions about sportsbetting, crypto, and bitbetio</p>
+                            <p>Answers for our most popular questions about sportsbetting and Beer to peer</p>
                         </div>
                     </div>
                 </div>
@@ -979,7 +984,7 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseOne"
                                             aria-expanded="false" aria-controls="collapseOne">
-                                            I want to play at Bitbetio, What do i need to do?
+                                            I want to play at BeetPeer, What do i need to do?
                                         </button>
                                     </h5>
                                     <div id="collapseOne" class="accordion-collapse collapse"
@@ -1051,7 +1056,7 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseFive"
                                             aria-expanded="false" aria-controls="collapseFive">
-                                            What kind of Escrow do you provide?
+                                            What kind of Beting options do you provide?
                                         </button>
                                     </h5>
                                     <div id="collapseFive" class="accordion-collapse collapse"
@@ -1087,7 +1092,7 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapsesaven"
                                             aria-expanded="false" aria-controls="collapsesaven">
-                                            Is the Escrow payment secured?
+                                            Is our payment secured?
                                         </button>
                                     </h5>
                                     <div id="collapsesaven" class="accordion-collapse collapse"
@@ -1123,7 +1128,7 @@
                                         <button class="accordion-button collapsed" type="button"
                                             data-bs-toggle="collapse" data-bs-target="#collapseNight"
                                             aria-expanded="false" aria-controls="collapseNight">
-                                            How do I withdraw money from my Bitbetio Bets account?
+                                            How do I withdraw money from my BeetPeer Bets account?
                                         </button>
                                     </h5>
                                     <div id="collapseNight" class="accordion-collapse collapse"

@@ -310,7 +310,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -338,7 +338,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -366,7 +366,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -394,7 +394,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -422,7 +422,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -450,7 +450,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -511,7 +511,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -539,7 +539,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -567,7 +567,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -595,7 +595,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -623,7 +623,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -651,7 +651,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -712,7 +712,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -740,7 +740,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -768,7 +768,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -796,7 +796,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -824,7 +824,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>
@@ -852,7 +852,7 @@
                                         <h6>In Prizes</h6>
                                         <h4>$2000</h4>
                                         <span class="btn-border">
-                                            <a href="tournaments-details.html" class="cmn-btn">Join Now</a>
+                                            <a href="/tournaments-details" class="cmn-btn">Join Now</a>
                                         </span>
                                     </div>
                                 </div>

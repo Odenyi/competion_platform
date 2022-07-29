@@ -224,7 +224,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="mid-content">
-                                    <a href="blog-details.html">
+                                    <a href="/blog-details">
                                         <h4>How to Get Started With Sports Betting</h4>
                                     </a>
                                     <p>If you are new to sports betting, then you should familiarize yourself with the
@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="bottom-item d-flex justify-content-between align-items-center">
                                     <p>August 25, 2022</p>
-                                    <a href="blog-details.html" class="btn-area d-flex align-items-center">
+                                    <a href="/blog-details" class="btn-area d-flex align-items-center">
                                         Read more
                                         <img src="assets/images/icon/arrow-right.png" alt="icon">
                                     </a>
@@ -245,7 +245,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="mid-content">
-                                    <a href="blog-details.html">
+                                    <a href="/blog-details">
                                         <h4>How To Make Money From Free Bets Using Matched Betting</h4>
                                     </a>
                                     <p>If you are new to sports betting, then you should familiarize yourself with the
@@ -253,7 +253,7 @@
                                 </div>
                                 <div class="bottom-item d-flex justify-content-between align-items-center">
                                     <p>August 25, 2022</p>
-                                    <a href="blog-details.html" class="btn-area d-flex align-items-center">
+                                    <a href="/blog-details" class="btn-area d-flex align-items-center">
                                         Read more
                                         <img src="assets/images/icon/arrow-right.png" alt="icon">
                                     </a>
@@ -266,7 +266,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="mid-content">
-                                    <a href="blog-details.html">
+                                    <a href="/blog-details">
                                         <h4>Betting On Horse Racing - Setting Up Your Betting Bank</h4>
                                     </a>
                                     <p>If you are new to sports betting, then you should familiarize yourself with the
@@ -274,7 +274,7 @@
                                 </div>
                                 <div class="bottom-item d-flex justify-content-between align-items-center">
                                     <p>August 25, 2022</p>
-                                    <a href="blog-details.html" class="btn-area d-flex align-items-center">
+                                    <a href="/blog-details" class="btn-area d-flex align-items-center">
                                         Read more
                                         <img src="assets/images/icon/arrow-right.png" alt="icon">
                                     </a>
@@ -287,7 +287,7 @@
                             </div>
                             <div class="blog-content">
                                 <div class="mid-content">
-                                    <a href="blog-details.html">
+                                    <a href="/blog-details">
                                         <h4>The Basics of Online Sports Betting - Learning the Specific Bets</h4>
                                     </a>
                                     <p>If you are new to sports betting, then you should familiarize yourself with the
@@ -295,7 +295,7 @@
                                 </div>
                                 <div class="bottom-item d-flex justify-content-between align-items-center">
                                     <p>August 25, 2022</p>
-                                    <a href="blog-details.html" class="btn-area d-flex align-items-center">
+                                    <a href="/blog-details" class="btn-area d-flex align-items-center">
                                         Read more
                                         <img src="assets/images/icon/arrow-right.png" alt="icon">
                                     </a>

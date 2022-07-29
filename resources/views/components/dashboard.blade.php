@@ -72,7 +72,7 @@
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
                                     <ul class="dropdown-menu main-menu shadow">
                                         <li><a class="nav-link" href="/soccer-bets-2">Tennis</a></li>
-                                        <li><a class="nav-link" href="/soccer-bets-1">Soccer</a></li>
+                                        <li><a class="nav-link" href="/soccer-bets-1">Football</a></li>
                                         <li><a class="nav-link" href="/soccer-bets-2">NBA</a></li>
                                     </ul>
                                 </li>
@@ -97,7 +97,7 @@
                                                 <li><a class="nav-link" href="/blog-details">Blog Details</a></li>
                                             </ul>
                                         </li>
-                                        <li><a class="nav-link" href="/affiliate">Affiliate</a></li>
+                                       
                                         <li><a class="nav-link" href="/faqs">Faqs</a></li>
                                         <li><a class="nav-link" href="/privacy-policy">Privacy Policy</a></li>
                                         <li><a class="nav-link" href="/terms-conditions">Terms Conditions</a></li>
@@ -177,7 +177,7 @@
                                             <img src="assets/images/dashboard-profile-1.png" alt="icon">
                                         </span>
                                         <span class="name-area">Brian</span>
-                                        <i class="icon-c-down-arrow"></i>
+                                        <i class="icon-gitr-down-arrow"></i>
                                     </div>
                                     <div class="main-area user-content">
                                         <div class="head-area d-flex">

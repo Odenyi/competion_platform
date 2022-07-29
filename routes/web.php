@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,5 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+// create new user
+Route::post('/users',[UserController::class,'store']);

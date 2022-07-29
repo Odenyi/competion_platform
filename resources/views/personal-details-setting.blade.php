@@ -28,16 +28,7 @@
                                         data-bs-target="#withdraw" type="button" role="tab" aria-controls="withdraw"
                                         aria-selected="false">withdraw</button>
                                 </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="buy-crypto-tab" data-bs-toggle="tab"
-                                        data-bs-target="#buy-crypto" type="button" role="tab" aria-controls="buy-crypto"
-                                        aria-selected="false">buy crypto</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="affiliate-tab" data-bs-toggle="tab"
-                                        data-bs-target="#affiliate" type="button" role="tab" aria-controls="affiliate"
-                                        aria-selected="false">affiliate</button>
-                                </li>
+                                
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link" id="transactions-tab" data-bs-toggle="tab"
                                         data-bs-target="#transactions" type="button" role="tab"
@@ -59,7 +50,7 @@
                         <div class="dashboard-sidebar">
                             <div class="single-item">
                                 <img src="assets/images/profile-img-1.png" alt="images">
-                                <h5>Philip Dunn</h5>
+                                <h5>Brian Odenyi</h5>
                                 <p>ID: 32315145</p>
                             </div>
                             <div class="balance">
@@ -382,48 +373,41 @@
                                     <div class="row">
                                         <div class="col-xxl-4 col-xl-5">
                                             <div class="balance-area">
+                                            
                                                 <div
                                                     class="head-area d-flex align-items-center justify-content-between">
                                                     <p class="mdr">Current Balance</p>
-                                                    <select>
-                                                        <option value="1">BTC</option>
-                                                        <option value="2">ETH</option>
-                                                        <option value="3">LTC</option>
-                                                    </select>
+                                                    
                                                 </div>
-                                                <h6>0.1018183873 <span>BTC</span></h6>
-                                                <p class="mdr">1BTC = 49,345.50 USD</p>
+                                                <h6><span>KSH</span>1,000 </h6>
+                                                
                                             </div>
+                                        
                                         </div>
                                         <div class="col-xxl-8 col-xl-7">
-                                            <div class="right-area">
-                                                <h5>Deposit BTC</h5>
-                                                <p class="para-area">You may switch to other currencies in the Left side
-                                                    option.</p>
-                                                <div class="address-bar">
-                                                    <p>BTC Deposit Address</p>
-                                                    <div class="input-area">
-                                                        <input type="text" value="bc1quxahsy9s7h99q5q4xykmmmh">
-                                                        <img src="assets/images/icon/copy-icon.png" alt="icon">
-                                                    </div>
-                                                    <div class="qr-copy d-flex justify-content-end align-items-center">
-                                                        <p class="mdr">Show QR Code</p>
-                                                        <p class="mdr">Copy Address</p>
-                                                    </div>
-                                                </div>
-                                                <div class="bottom-area">
-                                                    <div class="single-item">
-                                                        <h6>Important :</h6>
-                                                        <p>Send only BTC to this address, sending any other coin or
-                                                            token</p>
-                                                    </div>
-                                                    <div class="single-item">
-                                                        <h6>Notice :</h6>
-                                                        <p>Your deposit will be credited after 1 confirmation on the BTC
-                                                            blockchain network.</p>
+                                                <div class="right-area">
+                                                    <h5>Deposit</h5>
+                                                    <div class="address-bar">
+                                                        <form action="">
+                                                            <p>Send money into your BetPeer account</p>
+                                                        
+                                                            <div class="input-single">
+                                                                <label>Amount</label>
+                                                                <div class="input-area">
+                                                                    <input type="text" placeholder="Enter Amount">
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <span class="btn-border">
+                                                                <a href="javascript:void(0)" class="cmn-btn">Get Start
+                                                                    Now</a>
+                                                            </span>
+                                                        
+                                                        </form>
                                                     </div>
                                                 </div>
-                                            </div>
+                                                
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -436,35 +420,24 @@
                                                 <div
                                                     class="head-area d-flex align-items-center justify-content-between">
                                                     <p class="mdr">Current Balance</p>
-                                                    <select>
-                                                        <option value="1">BTC</option>
-                                                        <option value="2">ETH</option>
-                                                        <option value="3">LTC</option>
-                                                    </select>
+                                                
                                                 </div>
-                                                <h6>0.1018183873 <span>BTC</span></h6>
-                                                <p class="mdr">1BTC = 49,345.50 USD</p>
+                                                <h6><span>KSH</span>1,000</h6>
                                             </div>
                                         </div>
                                         <div class="col-xxl-8 col-xl-7">
                                             <div class="right-area">
-                                                <h5>Withdraw BITCOIN</h5>
-                                                <p class="para-area">You may switch to other currencies in the Left side
-                                                    option.</p>
+                                                <h5>Withdraw </h5>
+                                                
                                                 <div class="address-bar">
-                                                    <form action="#">
+                                                <form action="#">
                                                         <div class="input-single">
                                                             <label>Amount</label>
                                                             <div class="input-area">
                                                                 <input type="text" placeholder="Enter Amount">
                                                             </div>
                                                         </div>
-                                                        <div class="input-single">
-                                                            <label>Payment Address</label>
-                                                            <div class="input-area">
-                                                                <input type="text" placeholder="Enter Payment Address">
-                                                            </div>
-                                                        </div>
+                                                        
                                                         <span class="btn-border">
                                                             <a href="javascript:void(0)" class="cmn-btn">Get Start
                                                                 Now</a>
@@ -474,7 +447,7 @@
                                                 <div class="bottom-area">
                                                     <div class="single-item">
                                                         <h6>Transaction fee:</h6>
-                                                        <p>Your withdrawal will also have 0.0006 BTC subtracted to cover
+                                                        <p>Your withdrawal will also have 10.00 subtracted to cover
                                                             the transaction fee.</p>
                                                     </div>
                                                 </div>
@@ -483,207 +456,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="buy-crypto" role="tabpanel" aria-labelledby="buy-crypto-tab">
-                                <div class="buy-crypto">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="main-content">
-                                                <h5>Buy cryptocurrency directly to your Bitbetio Account</h5>
-                                                <p>Once payment is completed, your cryptocurrency will be available in
-                                                    your Jugaro account within minutes</p>
-                                                <div class="form-box">
-                                                    <p>1. Choose the crypto you wish to buy, enter the amount, and
-                                                        choose your favorite payment method.</p>
-                                                    <form action="#">
-                                                        <div class="row">
-                                                            <div class="col-6">
-                                                                <div class="input-single">
-                                                                    <label>Buy</label>
-                                                                    <div class="input-area">
-                                                                        <select>
-                                                                            <option value="1">BTC</option>
-                                                                            <option value="2">ETH</option>
-                                                                            <option value="3">LTC</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-6">
-                                                                <div class="input-single">
-                                                                    <label>Payment Methods</label>
-                                                                    <div class="input-area">
-                                                                        <select>
-                                                                            <option value="1">Visa</option>
-                                                                            <option value="2">Credit</option>
-                                                                            <option value="3">Master</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="input-single">
-                                                                    <label>Amount</label>
-                                                                    <div class="input-select d-flex align-items-center">
-                                                                        <input type="text" placeholder="100">
-                                                                        <select>
-                                                                            <option value="1">USD</option>
-                                                                            <option value="2">SGD</option>
-                                                                            <option value="3">AUD</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="table-area">
-                                                    <p>2. Choose the best offer from our payment partners, and complete
-                                                        your purchase.</p>
-                                                    <div class="table-responsive">
-                                                        <table class="table">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th scope="col">Channels</th>
-                                                                    <th scope="col">Arrival Time</th>
-                                                                    <th scope="col">You will get</th>
-                                                                    <th scope="col">Rate ( Fee Included)</th>
-                                                                    <th scope="col">Trade</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <img src="assets/images/icon/buy-crypto-logo-1.png"
-                                                                            alt="icon">
-                                                                    </th>
-                                                                    <td>5-15 mins</td>
-                                                                    <td>0.003091 BTC</td>
-                                                                    <td>39254.59 USD</td>
-                                                                    <td><a href="javascript:void(0)" class="cmn-btn">BUY</a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <img src="assets/images/icon/buy-crypto-logo-1.png"
-                                                                            alt="icon">
-                                                                    </th>
-                                                                    <td>5-15 mins</td>
-                                                                    <td>0.003091 BTC</td>
-                                                                    <td>39254.59 USD</td>
-                                                                    <td><a href="javascript:void(0)" class="cmn-btn">BUY</a></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <th scope="row">
-                                                                        <img src="assets/images/icon/buy-crypto-logo-1.png"
-                                                                            alt="icon">
-                                                                    </th>
-                                                                    <td>5-15 mins</td>
-                                                                    <td>0.003091 BTC</td>
-                                                                    <td>39254.59 USD</td>
-                                                                    <td><a href="javascript:void(0)" class="cmn-btn">BUY</a></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane fade" id="affiliate" role="tabpanel" aria-labelledby="affiliate-tab">
-                                <div class="affiliate-tab">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <h5>Affiliate Program</h5>
-                                            <p>Get a lifetime reward up to 15% for inviting new people!</p>
-                                            <div class="referral-bar">
-                                                <p>My Referral Link</p>
-                                                <div class="input-area">
-                                                    <input type="text" value="bc1quxahsy9s7h99q5q4xykmmmh">
-                                                    <img src="assets/images/icon/copy-icon.png" alt="icon">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-xl-6">
-                                                    <div class="single-info">
-                                                        <img src="assets/images/icon/earned-referral-icon-1.png"
-                                                            alt="icon">
-                                                        <div class="text-area">
-                                                            <h4>$2956.00</h4>
-                                                            <p class="mdr">Earned Referral</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-xl-6">
-                                                    <div class="single-info">
-                                                        <img src="assets/images/icon/earned-referral-icon-2.png"
-                                                            alt="icon">
-                                                        <div class="text-area">
-                                                            <h4>$208.00</h4>
-                                                            <p class="mdr">Last Month</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="table-area">
-                                                <div
-                                                    class="head-area d-flex justify-content-between align-items-center">
-                                                    <h5>Referral History</h5>
-                                                    <div class="input-area d-flex align-items-center">
-                                                        <input type="text" id="dateSelect"
-                                                            placeholder="015/08/2020 - 025/01/2021">
-                                                        <img src="assets/images/icon/date-icon.png" class="max-un"
-                                                            alt="icon">
-                                                    </div>
-                                                </div>
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">Date</th>
-                                                                <th scope="col">Level</th>
-                                                                <th scope="col">Username</th>
-                                                                <th scope="col">Earned</th>
-                                                                <th scope="col">E-mail</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr>
-                                                                <th scope="row">16 APR</th>
-                                                                <td>Level01</td>
-                                                                <td>Maxine24</td>
-                                                                <td>0.00000000BTC</td>
-                                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f0bd9188999e95c2c4b0979d91999cde939f9d">[email&#160;protected]</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">16 APR</th>
-                                                                <td>Level01</td>
-                                                                <td>Maxine24</td>
-                                                                <td>0.00000000BTC</td>
-                                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="c78aa6bfaea9a2f5f387a0aaa6aeabe9a4a8aa">[email&#160;protected]</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">16 APR</th>
-                                                                <td>Level01</td>
-                                                                <td>Maxine24</td>
-                                                                <td>0.00000000BTC</td>
-                                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="b8f5d9c0d1d6dd8a8cf8dfd5d9d1d496dbd7d5">[email&#160;protected]</a></td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th scope="row">16 APR</th>
-                                                                <td>Level01</td>
-                                                                <td>Maxine24</td>
-                                                                <td>0.00000000BTC</td>
-                                                                <td><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ade0ccd5c4c3c89f99edcac0ccc4c183cec2c0">[email&#160;protected]</a></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                    
                             <div class="tab-pane fade" id="transactions" role="tabpanel"
                                 aria-labelledby="transactions-tab">
                                 <div class="transactions-tab">
