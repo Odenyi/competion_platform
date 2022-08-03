@@ -36,18 +36,26 @@
                                             <div class="modal-body">
                                              
                                                 <div class="form-area">
-                                                    <form action="#">
-                                                        <div class="row">
+                                                    <form action="/users/authenticate" method="POST">
+                                                        @csrf
+                                                         <div class="row">
                                                             <div class="col-12">
                                                                 <div class="single-input">
                                                                     <label for="logemail">Email</label>
-                                                                    <input type="text" id="logemail"
-                                                                        placeholder="Email Address">
+                                                                    <input type="text" id="logemail" name="logemail" value="{{old('logemail')}}"
+                                                                        placeholder="Email Password">
+                                                
+                                                                    @error('logemail')
+                                                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                    @enderror
                                                                 </div>
                                                                 <div class="single-input">
                                                                     <label for="logpassword">Password</label>
-                                                                    <input type="text" id="logpassword"
+                                                                    <input type="text" id="logpassword" name="logpassword" value="{{old('logpassword')}}"
                                                                         placeholder="Email Password">
+                                                                    @error('logpassword')
+                                                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                                                    @enderror
                                                                 </div>
                                                             </div>
                                                             <div class="col-12">
@@ -70,12 +78,12 @@
                                                                 </div>
                                                             </div>
                                                             <span class="btn-border w-100">
-                                                                <button class="cmn-btn w-100">LOGIN</button>
+                                                                <button class="cmn-btn w-100" type="submit">LOGIN</button>
                                                             </span>
                                                         </div>
                                                     </form>
                                                     <div class="bottom-area text-center">
-                                                        <p>Not a member ? <a href="javascript:void(0)" class="reg-btn">Register</a></p>
+                                                        <p>Don't have an account ? <a href="javascript:void(0)" class="reg-btn">Register</a></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -97,7 +105,7 @@
                                                                 <div class="single-input">
                                                                     <label for="UserName">User Name</label>
                                                                     <input type="name" id="UserName" name="name"
-                                                                        placeholder="User Name" value={{old('name')}}>
+                                                                        placeholder="User Name" value="{{old('name')}}">
                                                                         @error('name')
                                                                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                                                         @enderror
@@ -105,7 +113,7 @@
                                                                 <div class="single-input">
                                                                     <label for="regnumber">Phone Number</label>
                                                                     <input type="number" id="regnumber" name="number"
-                                                                        placeholder="Phone Number" value={{old('number')}}>
+                                                                        placeholder="Phone Number" value="{{old('number')}}">
                                                                         @error('number')
                                                                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                                                         @enderror
@@ -113,7 +121,7 @@
                                                                 <div class="single-input">
                                                                     <label for="regemail">Email</label>
                                                                     <input type="text" id="regemail" name="email"
-                                                                        placeholder="Email Address" value={{old('email')}}>
+                                                                        placeholder="Email Address" value="{{old('email')}}">
                                                                         @error('email')
                                                                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                                                         @enderror
@@ -121,7 +129,7 @@
                                                                 <div class="single-input">
                                                                     <label for="regpassword">Password</label>
                                                                     <input type="password" id="regpassword" name="password"
-                                                                        placeholder="Password" value={{old('password')}}>
+                                                                        placeholder="Password" value="{{old('password')}}">
                                                                         @error('password')
                                                                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                                                         @enderror
@@ -129,7 +137,7 @@
                                                                 <div class="single-input">
                                                                     <label for="regpasswordconfirm">Password confirmation</label>
                                                                     <input type="password" id="regpasswordconfirm" name="password_confirmation"
-                                                                        placeholder="Password" value={{old('password_confirmation')}}>
+                                                                        placeholder="Password" value="{{old('password_confirmation')}}">
                                                                         @error('password_confirmation')
                                                                         <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                                                         @enderror

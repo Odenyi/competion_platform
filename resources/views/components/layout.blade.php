@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    
     <!-- start preloader -->
     <div class="preloader" id="preloader"></div>
     <!-- end preloader -->
@@ -51,7 +52,7 @@
                                 <li class="nav-item ">
                                     <a class="nav-link @yield('Home')" aria-current="page" href="/">Home</a>
                                 </li>
-                                
+                                @auth
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
@@ -67,6 +68,7 @@
                                         </li>
                                     </ul>
                                 </li>
+                                @endauth
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle @yield('Sports')" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
@@ -108,6 +110,12 @@
                                     <a class="nav-link @yield('Contact')" href="/contact">Contact</a>
                                 </li>
                             </ul>
+                          
+                            @auth
+                            <ul>
+                            <li><a class="nav-link" href="#">Logout</a></li>
+                            </ul>
+                            @else
                             <div class="right-area header-action d-flex align-items-center max-un">
                                 <button type="button" class="login" data-bs-toggle="modal" data-bs-target="#loginMod">
                                     Login
@@ -116,6 +124,8 @@
                                     Sign Up
                                 </button>
                             </div>
+                            @endauth
+                          
                         </div>
                     </nav>
                 </div>
@@ -123,6 +133,7 @@
         </div>
     </header>
     <!-- header-section end -->
+    <x-flash-message/>
       
       
     {{$slot}}
@@ -178,7 +189,11 @@
             </div>
         </div>
     </footer>
+
+
     <!-- Footer Area End -->
+
+    
 
     <!--==================================================================-->
     <script src="assets/js/jquery.min.js"></script>

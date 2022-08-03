@@ -12,7 +12,7 @@ class UserController extends Controller
     public function store(Request $request){
         $formFields = $request->validate([
             'name'=>['required','min:3'],
-            'number'=>['required','min:10',Rule::unique('users','number')],
+            'number'=>['required','min:3',Rule::unique('users','number')],
             'email'=>['required','email',Rule::unique('users','email')],
             'password'=>'required|confirmed|min:6',
             
@@ -28,5 +28,17 @@ class UserController extends Controller
 
         return redirect('/')->with('message','User created');
 
+    }
+    public function authenticate(Request $request){
+        $formFields = $request->validate([
+            'email'=>['required','email'],
+            'password'=>'required'
+            
+        ]);
+        if(auth()->attempt($formFields)){
+            $request->session()->regenerate();
+            return redirect('/')->with('message','User Logged in succesfully');
+        }
+        return back()->withErrors(['logemail'=>'Invalid Credentials'])->onlyInput('logemail');
     }
 }

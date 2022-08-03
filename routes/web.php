@@ -16,9 +16,13 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('login');
+
+// Routes for logged-in users
+Route::group(['middleware' => ['auth']], function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
+});
 });
 Route::get('/blog', function () {
     return view('blog');
@@ -65,3 +69,6 @@ Route::get('/contact', function () {
 
 // create new user
 Route::post('/users',[UserController::class,'store']);
+
+//login route
+Route::post('/users/authenticate',[UserController::class, 'authenticate']);
