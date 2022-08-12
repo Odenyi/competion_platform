@@ -29,10 +29,11 @@ class UserController extends Controller
         return redirect('/')->with('message','User created');
 
     }
+    //login function
     public function authenticate(Request $request){
         $formFields = $request->validate([
             'email'=>['required','email'],
-            'password'=>'required'
+            'password'=>'required','password'
             
         ]);
         if(auth()->attempt($formFields)){
@@ -40,5 +41,12 @@ class UserController extends Controller
             return redirect('/')->with('message','User Logged in succesfully');
         }
         return back()->withErrors(['logemail'=>'Invalid Credentials'])->onlyInput('logemail');
+    }
+    //logout user
+    public function logout(Request $request){
+        auth()->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/')->with('message','You have been logged out!');
     }
 }

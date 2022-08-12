@@ -1,5 +1,6 @@
 
    <x-layout>
+    <!-- make home link active -->
    @section('Home', 'active')
     <!-- Login Registration start -->
     <div class="log-reg">
@@ -41,17 +42,17 @@
                                                          <div class="row">
                                                             <div class="col-12">
                                                                 <div class="single-input">
-                                                                    <label for="logemail">Email</label>
-                                                                    <input type="text" id="logemail" name="logemail" value="{{old('logemail')}}"
+                                                                    <label for="email">Email</label>
+                                                                    <input type="text" id="email" name="email" value="{{old('logemail')}}"
                                                                         placeholder="Email Password">
-                                                
+                                                                    
                                                                     @error('logemail')
                                                                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                                                     @enderror
                                                                 </div>
                                                                 <div class="single-input">
-                                                                    <label for="logpassword">Password</label>
-                                                                    <input type="text" id="logpassword" name="logpassword" value="{{old('logpassword')}}"
+                                                                    <label for="password">Password</label>
+                                                                    <input type="password" id="password" name="password" value="{{old('password')}}"
                                                                         placeholder="Email Password">
                                                                     @error('logpassword')
                                                                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -795,7 +796,7 @@
                                                 </select>
                                             </div>
                                             <div class="d-flex in-dec-val">
-                                                <input type="text" value="0.1" class="InDeVal1">
+                                                <input type="text" value="1" class="InDeVal1">
                                                 <div class="btn-area">
                                                     <button class="plus">
                                                         <img src="assets/images/icon/up-arrow.png" alt="icon">
@@ -811,11 +812,11 @@
                                                 <p>Quick Amounts</p>
                                             </div>
                                             <div class="input-item">
-                                                <button class="quickIn">0.005</button>
-                                                <button class="quickIn">0.025</button>
-                                                <button class="quickIn">0.1</button>
-                                                <button class="quickIn">0.5</button>
-                                                <button class="quickIn">2.5</button>
+                                                <button class="quickIn">50</button>
+                                                <button class="quickIn">100</button>
+                                                <button class="quickIn">200</button>
+                                                <button class="quickIn">500</button>
+                                                <button class="quickIn">1000</button>
                                             </div>
                                         </div>
                                         <div class="single-area smart-value">

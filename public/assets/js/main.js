@@ -70,15 +70,15 @@ $(function ($) {
     // increase decrease value
     $('.minus, .plus').click(function() {
       var $input = $(".InDeVal1");
-      var val = parseFloat($input.val());
-      val += $(this).hasClass('plus') ? 0.1 : -0.1;
-      if (val < 0.1 || isNaN(val))
-        val = 0.1;
+      var val = parseInt($input.val());
+      val += $(this).hasClass('plus') ? 1 : -1;
+      if (val < 1 || isNaN(val))
+        val = 1;
       $input.val(val.toFixed(1)).trigger('change');
     });
     $('.minus2, .plus2').click(function() {
       var $input = $(".InDeVal2");
-      var val = parseFloat($input.val());
+      var val = parseInt($input.val());
       val += $(this).hasClass('plus2') ? 0.1 : -0.1;
       if (val < 0.1 || isNaN(val))
         val = 0.1;

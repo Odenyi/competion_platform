@@ -49,7 +49,7 @@
                         <div class="dashboard-sidebar">
                             <div class="single-item">
                                 <img src="assets/images/profile-img-1.png" alt="images">
-                                <h5>Brian Odenyi</h5>
+                                <h5>{{auth()->user()->name}}</h5>
                                 <p>ID: 32315145</p>
                             </div>
                             <div class="balance">

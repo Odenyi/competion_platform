@@ -113,7 +113,14 @@
                           
                             @auth
                             <ul>
-                            <li><a class="nav-link" href="#">Logout</a></li>
+                            <li>
+                                <form action="/logout" method="POST">
+                                    @csrf
+                                    <button type="submit">
+                                        <i class="fa-solid fa-door-closed"></i>Logout
+                                    </button>
+                                </form>
+                          </li>
                             </ul>
                             @else
                             <div class="right-area header-action d-flex align-items-center max-un">
@@ -209,6 +216,7 @@
     <script src="assets/js/plugin/wow.min.js"></script>
     <script src="assets/js/plugin/plugin.js"></script>
     <script src="assets/js/main.js"></script>
+   
 </body>
 
 </html>

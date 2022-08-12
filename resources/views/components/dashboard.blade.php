@@ -1,3 +1,6 @@
+@php
+$firstname = explode(" ", auth()->user()->name)[0];
+@endphp
 <!doctype html>
 <html lang="en">
 
@@ -176,7 +179,7 @@
                                         <span class="user-profile">
                                             <img src="assets/images/dashboard-profile-1.png" alt="icon">
                                         </span>
-                                        <span class="name-area">Brian</span>
+                                        <span class="name-area"> {{$firstname}}</span>
                                         <i class="icon-gitr-down-arrow"></i>
                                     </div>
                                     <div class="main-area user-content">
@@ -185,10 +188,10 @@
                                                 <img src="assets/images/dashboard-profile-2.png" alt="icon">
                                             </div>
                                             <div class="text-area">
-                                                <h5>Brian Odenyi</h5>
+                                                <h5>{{auth()->user()->name}}</h5>
                                                 <div class="d-flex align-items-center">
                                                     <img src="assets/images/icon/calendar-icon-2.png" alt="icon">
-                                                    <span>Joined July, 2022</span>
+                                                    <span>Joined {{auth()->user()->created_at}}</span>
                                                 </div>
                                             </div>
                                         </div>
