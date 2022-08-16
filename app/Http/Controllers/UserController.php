@@ -40,7 +40,8 @@ class UserController extends Controller
             $request->session()->regenerate();
             return redirect('/')->with('message','User Logged in succesfully');
         }
-        return back()->withErrors(['logemail'=>'Invalid Credentials'])->onlyInput('logemail');
+        return back()->withErrors(['logemail'=>'Invalid Credentials'])->onlyInput('logemail')->with('message','Invalid Credentials ');
+        
     }
     //logout user
     public function logout(Request $request){
