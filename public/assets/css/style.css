@@ -20,14 +20,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap");
 :root {
   --body-font: "Nunito Sans", sans-serif;
-  --body-color: #540f0f;
-  --body-alt-color: #540f0f;
-  --bg-color: #5c4d4d;
-  --head-color: #4a1235;
+  --body-color: #120f54;
+  --body-alt-color: #0d102f;
+  --bg-color: #120f54;
+  --head-color: #41cd7d;
   --head-alt-color: #fe8f9c;
   --border-color: #8790ae;
-  --hover-color: #5a1515;
-  --hover-alt-color:  #540f0f;
+  --hover-color: #571ce0;
+  --hover-alt-color: #291b6b;
 }
 
 .collapsing {
@@ -2400,7 +2400,7 @@ p {
 }
 
 .betpopmodal .modal .modal-dialog {
-  margin: auto;
+  margin-top: 5rem;
   max-width: 100%;
   width: 100%;
 }
@@ -2416,6 +2416,7 @@ p {
   border: none;
   z-index: 1;
 }
+
 
 .betpopmodal .modal .modal-dialog .modal-content .modal-header button {
   position: absolute;

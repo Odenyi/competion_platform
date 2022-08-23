@@ -12,6 +12,8 @@ class Bets extends Model
     protected $fillable =[
         'user_id',
         'game_id',
-        'bet_type'
+        'team_name',
+        'bet_type',
+        'odds'
     ];
 }

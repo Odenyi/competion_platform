@@ -17,7 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('user_id');
             $table->integer('game_id');
+            $table->string('team_name');
             $table->tinyInteger('bet_type');
+            $table->integer('odds');
             $table->timestamps();
         });
     }

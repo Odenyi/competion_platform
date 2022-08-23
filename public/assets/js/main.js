@@ -79,9 +79,9 @@ $(function ($) {
     $('.minus2, .plus2').click(function() {
       var $input = $(".InDeVal2");
       var val = parseInt($input.val());
-      val += $(this).hasClass('plus2') ? 0.1 : -0.1;
-      if (val < 0.1 || isNaN(val))
-        val = 0.1;
+      val += $(this).hasClass('plus2') ? 1: 1;
+      if (val < 1 || isNaN(val))
+        val = 1;
       $input.val(val.toFixed(1)).trigger('change');
     });
 
@@ -89,7 +89,37 @@ $(function ($) {
     $('.quickIn').click(function(){
       var btnVal = $(this).html();
       $(".InDeVal1").val(btnVal);
+
+     
     });
+    calculatetotalamount();
+
+    // calculate total depending on odds
+    function calculatetotalamount(){
+    let total =0;
+    let amount =$('.InDeVal1').val();
+    let oddsarray = [];
+    let Oddsvalue = document.querySelectorAll('.odds')
+    for(let i=0;i<Oddsvalue.length;i++){
+      let odds =Oddsvalue[i].innerText;
+      oddsarray.push(odds);
+    }
+       
+   
+    oddsarray.forEach((odd )=>{
+      total += parseInt(odd)
+     
+    } );
+    
+    let totalamount =(total*amount);
+    let betpeerfee =5/100*totalamount;
+    
+    let recievableamount = totalamount-betpeerfee
+    $('.betpeerfee').empty();
+    $('.betpeerfee').append(betpeerfee);
+    $('.amount').empty();
+    $('.amount').append(recievableamount);
+  }
 
     // Login Reg Tab
     $('.reg-btn').click(function(){
@@ -116,6 +146,132 @@ $(function ($) {
       $('.notifications-content').toggleClass('active');
       $('.user-content').removeClass('active');
     });
+
+          // add to betslip
+          let arsenalbtn = document.getElementById('arsenalbtn');
+          if(arsenalbtn ){
+          arsenalbtn.addEventListener('click', function() {
+              
+      
+          let value = document.getElementById('Arsenal').innerText;
+          let game_id=9;
+          let team_id=9;
+          let bet_type=2;
+          let bet_odds=2;
+          $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+          });
+          $.ajax({
+              type: 'POST',
+              url: '/add-to-betslip',
+              data: {
+                  'team_name': value,
+                  'game_id': game_id,
+                  'team_id': team_id,
+                  'bet_type': bet_type,
+                  'bet_odds': bet_odds
+              },
+              success: function(response){
+                  console.log(response);
+              
+                  alert(response.message);
+
+              
+              }
+          });
+      });
+  }
+        // Delete bets
+
+        $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+    $('.deleteicon').click(function (e) {
+        var el = this;
+        e.preventDefault();
+      
+      
+
+      
+
+        // Delete id
+        let deleteid =$(el).closest('.betcard').find('.delete_class').val();
+          console.log(deleteid);
+
+        // Confirm box
+        bootbox.confirm("Do you really want to delete the bet?", function (result) {
+
+            if (result) {
+                // AJAX Request
+                $.ajax({
+                    method: 'POST',
+                    url: '/delete-betslip',
+                    data: {'betitem_id': deleteid},
+                    success: function (response) {
+                        
+                        // Removing row from HTML Table
+                        if (response.success == 1) {
+                            $(el).closest('.betcard').css('background', 'tomato');
+                            $(el).closest('.betcard').fadeOut(800, function () {
+                                $(this).remove();
+                            });
+                            
+                           
+                        } else {
+                            bootbox.alert('Record not deleted.');
+                        }
+
+                    }
+                });
+            }
+
+        });
+
+    });
+
+   
+
+      //change input at interval and detect events
+      $.event.special.inputchange = {
+        setup: function() {
+            var self = this, val;
+            $.data(this, 'timer', window.setInterval(function() {
+                val = self.value;
+                if ( $.data( self, 'cache') != val ) {
+                    $.data( self, 'cache', val );
+                    $( self ).trigger( 'inputchange' );
+                }
+            }, 20));
+        },
+        teardown: function() {
+            window.clearInterval( $.data(this, 'timer') );
+        },
+        add: function() {
+            $.data(this, 'cache', this.value);
+        }
+    };
+     //Update total
+     $('.InDeVal1').on('inputchange', function() {
+      calculatetotalamount();
+    });
+
+     
+
+     
+    $('.placebet').click((e)=>{
+      var el = this;
+      e.preventDefault();
+      let deleteid =$(el).closest('.betcard').find('.update_class').val();
+      
+    });
+ 
+
+    
+    
 
     // Enable Google Authentication
     $( "#switch" ).change(function() {

@@ -26,6 +26,9 @@ $firstname = explode(" ", auth()->user()->name)[0];
     
     <!-- alpine js to show dynamic pop up and flash messages -->
      <script src="//unpkg.com/alpinejs" defer></script>
+
+     <!-- // CSRF for all ajax call -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 </head>
 
 <body>

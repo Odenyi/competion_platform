@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\BettingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -51,7 +52,16 @@ Route::group(['middleware' => ['auth']], function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+ //remove from betslip
+ Route::post('/delete-betslip',[BettingController::class,'deleteBetslip']);
+
+
+//add to betslip
+Route::get('/betslip', [BettingController::class, 'index']);
+
 });
+Route::post('/add-to-betslip',[BettingController::class,'addToBetslip']);
 Route::get('/blog', function () {
     return view('blog');
 });

@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- // CSRF for all ajax call -->
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>BetPeer</title>
 
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
@@ -17,6 +20,10 @@
     <link rel="stylesheet" href="assets/css/arafat-font.css">
     <link rel="stylesheet" href="assets/css/plugin/animate.css">
     <link rel="stylesheet" href="assets/css/style.css">
+   
+    <!-- material design cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css" />
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
     
@@ -53,6 +60,9 @@
                                     <a class="nav-link @yield('Home')" aria-current="page" href="/">Home</a>
                                 </li>
                                 @auth
+                                <li class="nav-item">
+                                    <a class="nav-link @yield('Betslip')" href="/betslip">Betslip</a>
+                                </li>
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
@@ -212,11 +222,17 @@
     <script src="assets/js/plugin/jquery.downCount.js"></script>
     <script src="assets/js/plugin/counter.js"></script>
     <script src="assets/js/plugin/waypoint.min.js"></script>
+     <!-- bootbox -->
+     <script src='https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js'></script>
+
     <script src="assets/js/plugin/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/plugin/wow.min.js"></script>
     <script src="assets/js/plugin/plugin.js"></script>
     <script src="assets/js/main.js"></script>
+    <script>
+     
+    </script>
+   
    
 </body>
-
 </html>
