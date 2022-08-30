@@ -153,7 +153,8 @@ $(function ($) {
           arsenalbtn.addEventListener('click', function() {
               
       
-          let value = document.getElementById('Arsenal').innerText;
+          let hometeam= document.getElementById('Arsenal').innerText;
+          let awayteam = document.getElementById('volna').innerText
           let game_id=9;
           let team_id=9;
           let bet_type=2;
@@ -167,7 +168,8 @@ $(function ($) {
               type: 'POST',
               url: '/add-to-betslip',
               data: {
-                  'team_name': value,
+                  'team_name': hometeam,
+                  'away_team':awayteam,
                   'game_id': game_id,
                   'team_id': team_id,
                   'bet_type': bet_type,
@@ -196,9 +198,7 @@ $(function ($) {
       
       
 
-      
-
-        // Delete id
+            // Delete id
         let deleteid =$(el).closest('.betcard').find('.delete_class').val();
           console.log(deleteid);
 
@@ -260,17 +260,46 @@ $(function ($) {
     });
 
      
-
-     
-    $('.placebet').click((e)=>{
+// make bet
+$('.placebet').click(function (e) {
       var el = this;
-      e.preventDefault();
-      let deleteid =$(el).closest('.betcard').find('.update_class').val();
+      e.preventDefault();       
       
+      $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
     });
- 
+      
+      let amount =$('.InDeVal1').val();
+      let amountrecievable = document.querySelector('.amount').innerText;
+     
 
+      let betpeerfee = document.querySelector('.betpeerfee').innerText;
+      console.log(betpeerfee)
     
+
+  
+      $.ajax({
+          type: 'POST',
+          url: '/placebet',
+          data: {
+              'amount': amount,
+              'amountrecievable': amountrecievable,
+              'betpeerfee' : betpeerfee 
+              
+          },
+          success: function(response){
+              console.log(response);
+              window.location.reload();
+          
+              alert(response.message);
+
+          
+          }
+      });
+  });
+ 
     
 
     // Enable Google Authentication

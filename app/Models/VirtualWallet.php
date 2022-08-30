@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bets extends Model
+class VirtualWallet extends Model
 {
     use HasFactory;
-    protected $table = 'bets';
+    protected $table = 'virtualwallet';
     protected $fillable =[
+        'competition_id',
         'user_id',
-        'game_id',
-        'home_team',
-        'away_team',
         'bet_type',
-        'odds'
+        'amount'
+
+        
     ];
 }

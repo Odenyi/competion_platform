@@ -21,7 +21,7 @@ $total_bets = 0;
                                     <div class="select-odds mb-2 betcard">
                                         <input type="hidden" class="delete_class update_class" value="{{$bet->id}}">
                                         <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <h6> {{$bet->team_name}} X {{$bet->team_name}}</h6>
+                                        <h6> {{$bet->home_team}} X {{$bet->away_team}}</h6>
                                                             
                                         <h6 class="odds">{{$bet->odds}}</h6>
                                         <a href="javascript:void(0);" class="text-danger deleteicon " 
@@ -34,9 +34,7 @@ $total_bets = 0;
                                         <h6>{{$bet->team_name}}</h6>
                                         </div>
                                     </div>
-                                    @php
-                                    $total_bets += $bet->odds;
-                                    @endphp
+
                                     @endforeach
                                     @else
                                     <div class="text-center">

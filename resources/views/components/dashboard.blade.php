@@ -58,6 +58,10 @@ $firstname = explode(" ", auth()->user()->name)[0];
                                 <li class="nav-item">
                                     <a class="nav-link" aria-current="page" href="/">Home</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link @yield('Betslip')" href="/betslip">Betslip</a>
+                                </li>
+                               
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle active" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
@@ -72,6 +76,9 @@ $firstname = explode(" ", auth()->user()->name)[0];
                                             </ul>
                                         </li>
                                     </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link @yield('Competition')" href="/competition">Competition</a>
                                 </li>
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"

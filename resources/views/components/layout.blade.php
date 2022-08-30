@@ -63,6 +63,7 @@
                                 <li class="nav-item">
                                     <a class="nav-link @yield('Betslip')" href="/betslip">Betslip</a>
                                 </li>
+                                
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Dashboard</a>
@@ -77,6 +78,10 @@
                                             </ul>
                                         </li>
                                     </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link @yield('Competition')" href="/competition">Competition</a>
                                 </li>
                                 @endauth
                                 <li class="nav-item dropdown main-navbar">

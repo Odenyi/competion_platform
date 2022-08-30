@@ -481,7 +481,7 @@
                                     <h6>Division- Belarus</h6>
                                 </div>
                                 <div class="team-single">
-                                    <h4>Volna</h4>
+                                    <h4 id="volna">Volna</h4>
                                     <span class="mdr">Away</span>
                                     <div class="img-area">
                                         <img src="assets/images/team-logo-2.png" alt="image">
@@ -490,11 +490,11 @@
                             </div>
                             <div class="bottom-item">
                                 <button type="button" class="cmn-btn firstTeam" data-bs-toggle="modal" id="arsenalbtn"
-                                    data-bs-target="#">Eagle will win</button>
+                                    data-bs-target="#">Arsenal will win</button>
                                 <button type="button" class="cmn-btn draw" data-bs-toggle="modal"
                                     data-bs-target="#betpop-up">Draw</button>
                                 <button type="button" class="cmn-btn lastTeam" data-bs-toggle="modal"
-                                    data-bs-target="#betpop-up">Paeek will win</button>
+                                    data-bs-target="#betpop-up">Volna will win</button>
                             </div>
                         </div>
                     </div>

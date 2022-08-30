@@ -13,6 +13,7 @@ class BettingController extends Controller
     //
     public function addToBetslip(Request $request){
         $team_name = $request->input('team_name');
+        $away_team = $request->input('away_team');
         $bet_type = $request->input('bet_type');
         $game_id = $request->input('game_id');
         $user_id = Auth::user()->id;
@@ -30,7 +31,8 @@ class BettingController extends Controller
             $betslip= new Bets();
             $betslip->user_id = $user_id;
             $betslip->game_id = $game_id;
-            $betslip->team_name = $team_name;
+            $betslip->home_team = $team_name;
+            $betslip->away_team = $away_team;
             $betslip->bet_type = $bet_type;
             $betslip->odds = $request->input('bet_odds');
             $betslip->save();

@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bets extends Model
+class PlacedBets extends Model
 {
     use HasFactory;
-    protected $table = 'bets';
-    protected $fillable =[
+    protected $table = 'placedbets';
+    protected $fillable = [
+        'groupbet_id',
         'user_id',
         'game_id',
-        'home_team',
-        'away_team',
+        'team_name',
         'bet_type',
         'odds'
     ];

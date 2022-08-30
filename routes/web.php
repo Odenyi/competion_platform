@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\Frontend\BettingController;
+use App\Http\Controllers\frontend\PlacedbetController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -62,6 +64,8 @@ Route::get('/betslip', [BettingController::class, 'index']);
 
 });
 Route::post('/add-to-betslip',[BettingController::class,'addToBetslip']);
+// place bet
+Route::post('/placebet',[PlacedbetController::class,'save']);
 Route::get('/blog', function () {
     return view('blog');
 });
@@ -113,3 +117,6 @@ Route::post('/users/authenticate',[UserController::class, 'authenticate']);
 
 // logout
 Route::post('/logout',[UserController::class, 'logout']);
+
+//Show competition
+Route::get('/competition',[CompetitionController::class, 'index']);
