@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Models\Competition;
+use App\Models\VirtualWallet;
 use Illuminate\Support\Facades\Auth;
 
 class PlacedbetController extends Controller
@@ -18,7 +19,7 @@ class PlacedbetController extends Controller
     public function save(Request $request){
       
         $amount = $request->input('amount');
-        $betpeerfee = $request->input('betpeerfee');
+        
         $amountreceivable = $request->input ('amountrecievable');
       
         // dd($amountreceivable);
@@ -31,45 +32,48 @@ class PlacedbetController extends Controller
           
 
             
-            $placedbets = Bets::where('user_id',$user_id)->get();
+            $betslips= Bets::where('user_id',$user_id)->get();
             if($amountreceivable >0){
             if(UserAccounts::where('user_id',$user_id)->where('amount','>=',$amount)->first()){
                 $useraccount = UserAccounts::where('user_id',$user_id)->where('amount','>=',$amount)->first();
                 $reduceamount = $useraccount ->amount - $amount;
                 $useraccount->amount = $reduceamount;
                 $useraccount->update();
-                
+
+                // create competition
+                foreach($betslips as $betslip){
                 $competition = new Competition();
-                $competition->recievable_amount = $amountreceivable;
-                $competition->platformfee = $betpeerfee;
+                $competition->home_team = $betslip->home_team;
+                $competition->away_team = $betslip->away_team;
+                $competition->odd = $betslip->odds;
+                $competition->start_time = '2';
+                $competition->end_time= '4';
+
                 $competition->save();
 
                 $competition->id;
-                // create betsplaced
-                $multibet = new PlacedBets();
-
-                foreach ($placedbets as $placedbet) {
-                    $multibet = new PlacedBets();
-                    $multibet->groupbet_id = $usergroupbets->id;
-                    $multibet->user_id = $placedbet->user_id;
-                    $multibet->game_id = $placedbet->game_id;
-                    $multibet->home_team = $placedbet->home_team;
-                    $multibet->away_team = $placedbet->away_team;
-                    $multibet->bet_type = $placedbet->bet_type;
-                    $multibet->odds = $placedbet->odds;
-                    $multibet->save();
+                
+                $virtualwallet = new VirtualWallet();
+                $virtualwallet->competition_id = $competition->id;
+                $virtualwallet->user_id = $betslip->user_id;
+                $virtualwallet->bet_type = $betslip->bet_type;
+                $virtualwallet->amount = $amount;
+                $virtualwallet->save();
+                
 
 
-                    
-                }
+                }   
+                // create Virtual wallet
+               
+              
 
-                $placedbets = Bets::where('user_id',$user_id)->get();
-                Bets::destroy($placedbets);
+                $betslips = Bets::where('user_id',$user_id)->get();
+                Bets::destroy($betslips);
                 // return redirect('/')->with('message','Your bet has been placed successfully');
                 
                 return response()->json([
                     'success' => true,
-                    'message' => 'Bet added to placed'
+                    'message' => 'Bet added to Competition'
                 ]);
             }
             else{

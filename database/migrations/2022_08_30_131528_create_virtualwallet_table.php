@@ -16,7 +16,8 @@ return new class extends Migration
         Schema::create('virtualwallet', function (Blueprint $table) {
             $table->id();
             $table->string('competition_id');
-            $table->string('bet_type');
+            $table->string('user_id');
+            $table->tinyInteger('bet_type');
             $table->integer('amount');
             $table->timestamps();
         });

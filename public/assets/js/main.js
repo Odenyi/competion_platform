@@ -149,16 +149,15 @@ $(function ($) {
 
           // add to betslip
           let arsenalbtn = document.getElementById('arsenalbtn');
-          if(arsenalbtn ){
-          arsenalbtn.addEventListener('click', function() {
-              
-      
-          let hometeam= document.getElementById('Arsenal').innerText;
+          let volnabtn = document.getElementById('volnabtn');
+          if(volnabtn){
+            volnabtn.addEventListener('click', function() {
+              let hometeam= document.getElementById('Arsenal').innerText;
           let awayteam = document.getElementById('volna').innerText
-          let game_id=9;
-          let team_id=9;
+          let game_id=1;
+          let team_id=2;
           let bet_type=2;
-          let bet_odds=2;
+          let bet_odds=1;
           $.ajaxSetup({
               headers: {
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -176,9 +175,45 @@ $(function ($) {
                   'bet_odds': bet_odds
               },
               success: function(response){
-                  console.log(response);
+                  console.log(response.message);
               
-                  alert(response.message);
+                  
+
+              
+                    }
+                });
+            });
+          }
+          if(arsenalbtn ){
+          arsenalbtn.addEventListener('click', function() {
+              
+      
+          let hometeam= document.getElementById('Arsenal').innerText;
+          let awayteam = document.getElementById('volna').innerText
+          let game_id=1;
+          let team_id=2;
+          let bet_type=1;
+          let bet_odds=1;
+          $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+          });
+          $.ajax({
+              type: 'POST',
+              url: '/add-to-betslip',
+              data: {
+                  'team_name': hometeam,
+                  'away_team':awayteam,
+                  'game_id': game_id,
+                  'team_id': team_id,
+                  'bet_type': bet_type,
+                  'bet_odds': bet_odds
+              },
+              success: function(response){
+                  console.log(response.message);
+              
+                 
 
               
               }
@@ -286,7 +321,6 @@ $('.placebet').click(function (e) {
           data: {
               'amount': amount,
               'amountrecievable': amountrecievable,
-              'betpeerfee' : betpeerfee 
               
           },
           success: function(response){

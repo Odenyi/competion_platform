@@ -23,7 +23,7 @@ $total_bets = 0;
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                         <h6> {{$bet->home_team}} X {{$bet->away_team}}</h6>
                                                             
-                                        <h6 class="odds">{{$bet->odds}}</h6>
+                                        <h6 class="odds">{{$bet->bet_type}}</h6>
                                         <a href="javascript:void(0);" class="text-danger deleteicon " 
                                             data-bs-container="#tooltip-container1" data-bs-toggle="tooltip" 
                                             data-bs-placement="top" title="Delete">

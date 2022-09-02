@@ -494,7 +494,7 @@
                                 <button type="button" class="cmn-btn draw" data-bs-toggle="modal"
                                     data-bs-target="#betpop-up">Draw</button>
                                 <button type="button" class="cmn-btn lastTeam" data-bs-toggle="modal"
-                                    data-bs-target="#betpop-up">Volna will win</button>
+                                    data-bs-target="#" id="volnabtn">Volna will win</button>
                             </div>
                         </div>
                     </div>

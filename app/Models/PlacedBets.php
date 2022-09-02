@@ -17,4 +17,5 @@ class PlacedBets extends Model
         'bet_type',
         'odds'
     ];
+ 
 }

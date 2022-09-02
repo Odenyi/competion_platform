@@ -17,4 +17,11 @@ class Competition extends Model
         'end_time'
         
     ];
+    public function availableCompetition()
+    {
+        return $this->hasMany(VirtualWallet::class);
+    }
+    public function amount() {
+        return $this->hasOne(VirtualWallet::class);
+    }
 }

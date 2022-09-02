@@ -1,5 +1,6 @@
 <x-layout>
 @section('Competition', 'active')
+@php($bet_type = false)
   <!-- Bet This Game start -->
   <section class="bet-this-game">
         <div class="overlay pt-120 pb-120">
@@ -13,7 +14,11 @@
                         </div>
                     </div>
                 </div>
+                
+                    
+                
                 <div class="row cus-mar">
+                @foreach ($availablecompetition as $competition)
                     <div class="col-lg-6">
                         <div class="single-area">
                             <div class="head-area d-flex align-items-center">
@@ -22,7 +27,7 @@
                             </div>
                             <div class="main-content">
                                 <div class="team-single">
-                                    <h4 id="Arsenal">Arsenal</h4>
+                                    <h4 id="Arsenal">{{ $competition->home_team }}</h4>
                                     <span class="mdr">Home</span>
                                     <div class="img-area">
                                         <img src="assets/images/team-logo-1.png" alt="image">
@@ -43,9 +48,18 @@
                                         </h4>
                                     </div>
                                     <h6>Division- Belarus</h6>
+                                    @foreach($competition->availableCompetition as $compete)
+                                    
+                                    <h6>{{$compete->bet_type}}</h6>
+                                    @endforeach
+
+                                    
+                                    <h6>{{$competition->amount->amount}}</h6>  
+                                  
+                                    
                                 </div>
                                 <div class="team-single">
-                                    <h4 id="volna">Volna</h4>
+                                    <h4 id="volna">{{ $competition->away_team }}</h4>
                                     <span class="mdr">Away</span>
                                     <div class="img-area">
                                         <img src="assets/images/team-logo-2.png" alt="image">
@@ -53,17 +67,38 @@
                                 </div>
                             </div>
                             <div class="bottom-item">
-                                <button type="button" class="cmn-btn firstTeam" data-bs-toggle="modal" id="arsenalbtn"
-                                    data-bs-target="#">Arsenal will win</button>
-                                <button type="button" class="cmn-btn draw" data-bs-toggle="modal"
-                                    data-bs-target="#betpop-up">Draw</button>
-                                <button type="button" class="cmn-btn lastTeam" data-bs-toggle="modal"
-                                    data-bs-target="#betpop-up">Volna will win</button>
+                                @foreach($competition->availableCompetition as $compete)
+                                    @if($compete->bet_type ==1 || $compete->bet_type ==2 ||$compete->bet_type ==0)
+                                        @switch($compete->bet_type )
+                                            @case(1)
+                                            <button type="button" class="cmn-btn {{$bet_type ==1 ?'btn-success':''}}firstTeam" data-bs-toggle="modal" id="arsenalbtn" {{$compete->bet_type !=1 ?'disabled':''}}
+                                        data-bs-target="#">{{$competition->home_team}} will win</button> 
+                                                @break
+                                            @case(2)
+                                            <button type="button" class="cmn-btn draw" data-bs-toggle="modal"
+                                            data-bs-target="#betpop-up">Draw</button>
+                                                @break
+                                            @case(0)
+                                        <button type="button" class="cmn-btn lastTeam" data-bs-toggle="modal"
+                                            data-bs-target="#betpop-up">{{$competition->away_team}}will win</button>
+                                                @break
+                                        
+                                            @default
+                                                
+                                        @endswitch
+                                    @endif
+                                                                
+                                        
+                                   
+                                @endforeach
+                               
+                                    
                             </div>
                         </div>
                     </div>
-                  
+                    @endforeach
                 </div>
+                
                 <div class="row">
                     <div class="col-lg-12 d-flex justify-content-center">
                         <div class="bottom-area mt-60">
