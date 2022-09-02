@@ -2514,6 +2514,10 @@ p {
   width: 33%;
   height: 0;
 }
+.active-bet{
+  background-color: red;
+  pointer-events: none;
+}
 
 .betpopmodal .modal .modal-dialog .modal-content .modal-body .mid-area .single-area .nice-select::after {
   height: 10px;

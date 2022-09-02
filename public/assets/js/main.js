@@ -184,6 +184,9 @@ $(function ($) {
                 });
             });
           }
+
+            $('.active-bet').attr("disabled", false)
+
           if(arsenalbtn ){
           arsenalbtn.addEventListener('click', function() {
               
