@@ -19,7 +19,8 @@
                 
                 <div class="row cus-mar">
                 @foreach ($availablecompetition as $competition)
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 betagainst">
+                    <input type="hidden" class="betagainstinput" value="{{$competition->id}}">
                         <div class="single-area">
                             <div class="head-area d-flex align-items-center">
                                 <span class="mdr cmn-btn">Pick Winner</span>
@@ -68,13 +69,13 @@
                             </div>
                             <div class="bottom-item">
                                
-                                            <button type="button" class="cmn-btn @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==1 ?'active-bet':''}} @endforeach " data-bs-toggle="modal" id="arsenalbtn" 
+                                            <button type="button" class="cmn-btn clickbuttonhome @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==1 ?'active-bet':''}} @endforeach " data-bs-toggle="modal" id="arsenalbtn" 
                                         data-bs-target="#">{{$competition->home_team}} will win</button> 
                                             
-                                            <button type="button" class="cmn-btn @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==0 ?'active-bet':''}} @endforeach draw" data-bs-toggle="modal"  @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==0 ?'disabled':''}} @endforeach
-                                            data-bs-target="#betpop-up">Draw</button>
-                                              
-                                        <button type="button" class="cmn-btn @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==2 ?'active-bet':''}} @endforeach lastTeam" data-bs-toggle="modal"
+                                         <button type="button" class="cmn-btn clickbuttondraw @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==0 ?'active-bet':''}} @endforeach draw" data-bs-toggle="modal" data-href="{{URL::to(' /competition/<?php echo$competition->id ?>')   }}"
+                                            data-bs-target="#betpop-up" >Draw</button>
+
+                                        <button type="button" class="cmn-btn clickbuttonaway @foreach($competition->availableCompetition as $compete){{$compete->bet_type ==2 ?'active-bet':''}} @endforeach lastTeam" data-bs-toggle="modal"
                                             data-bs-target="#betpop-up">{{$competition->away_team}}will win</button>
                                                
                                         

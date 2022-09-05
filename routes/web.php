@@ -63,6 +63,11 @@ Route::get('/dashboard', function () {
 Route::get('/betslip', [BettingController::class, 'index']);
 
 });
+
+// competition complete
+Route::get('/competition', [CompetitionController::class, 'betagainst']);
+
+
 Route::post('/add-to-betslip',[BettingController::class,'addToBetslip']);
 // place bet
 Route::post('/placebet',[PlacedbetController::class,'save']);

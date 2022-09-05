@@ -185,7 +185,45 @@ $(function ($) {
             });
           }
 
-            $('.active-bet').attr("disabled", false)
+            $(' .active-bet').attr("disabled", false)
+
+            //bet against someone
+            $('.clickbuttondraw').on('click', function () {
+          
+              let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
+              let betvalue = 0
+
+              bootbox.confirm("Do you really want to bet Draw", function (result) {
+
+                if (result) {
+                    // AJAX Request
+                    $.ajax({
+                        method: 'POST',
+                        url: '/competition',
+                        data: {'betagainst_id': betagainstid,
+                                'betvalue ': betvalue},
+                        success: function (response) {
+                            
+                            // Removing row from HTML Table
+                            if (response.success == 1) {
+                                // $(el).closest('.betcard').css('background', 'tomato');
+                                // $(el).closest('.betcard').fadeOut(800, function () {
+                                //     $(this).remove();
+                                // });
+                               
+                                
+                               
+                            } else {
+                                bootbox.alert('Sorry you are not able to bet.');
+                            }
+    
+                        }
+                    });
+                }
+    
+            });
+            });
+            
 
           if(arsenalbtn ){
           arsenalbtn.addEventListener('click', function() {
@@ -257,6 +295,7 @@ $(function ($) {
                             $(el).closest('.betcard').fadeOut(800, function () {
                                 $(this).remove();
                             });
+                           
                             
                            
                         } else {
@@ -329,8 +368,9 @@ $('.placebet').click(function (e) {
           success: function(response){
               console.log(response);
               window.location.reload();
-          
-              alert(response.message);
+
+             
+              // alert(response.message);
 
           
           }
