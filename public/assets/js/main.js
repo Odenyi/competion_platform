@@ -187,11 +187,22 @@ $(function ($) {
 
             $(' .active-bet').attr("disabled", false)
 
-            //bet against someone
-            $('.clickbuttondraw').on('click', function () {
+            //bet against someone for team to draw
+            $('.clickbuttondraw').on('click', function (e) {
+
+              var el = this;
+              e.preventDefault();
           
               let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
-              let betvalue = 0
+              let betvalue = 0;
+              
+              console.log(betagainstid)
+
+              $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
               bootbox.confirm("Do you really want to bet Draw", function (result) {
 
@@ -210,7 +221,106 @@ $(function ($) {
                                 // $(el).closest('.betcard').fadeOut(800, function () {
                                 //     $(this).remove();
                                 // });
+                               alert(response.message);
+                               window.location.reload();
+                                
                                
+                            } else {
+                                bootbox.alert('Sorry you are not able to bet.');
+                            }
+    
+                        }
+                    });
+                }
+    
+            });
+            });
+
+            //bet against someone for hometeam to win
+            $('.clickbuttonhome').on('click', function (e) {
+
+              var el = this;
+              e.preventDefault();
+          
+              let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
+              let betvalue = 1;
+              
+             
+
+              $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+              bootbox.confirm("Do you really want to bet Home team to win", function (result) {
+
+                if (result) {
+                    // AJAX Request
+                    $.ajax({
+                        method: 'POST',
+                        url: '/competitionhome',
+                        data: {'betagainst_id': betagainstid,
+                                },
+                        success: function (response) {
+                            
+                            // Removing row from HTML Table
+                            if (response.success == 1) {
+                                // $(el).closest('.betcard').css('background', 'tomato');
+                                // $(el).closest('.betcard').fadeOut(800, function () {
+                                //     $(this).remove();
+                                // });
+                               alert(response.message);
+                               window.location.reload();
+                                
+                               
+                            } else {
+                                bootbox.alert('Sorry you are not able to bet.');
+                            }
+    
+                        }
+                    });
+                }
+    
+            });
+            });
+
+            //bet against someone for awayteam to win
+            $('.clickbuttonaway').on('click', function (e) {
+
+              var el = this;
+              e.preventDefault();
+          
+              let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
+              let betvalue = 2;
+              
+             
+
+              $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+              bootbox.confirm("Do you really want to bet Away team to win", function (result) {
+
+                if (result) {
+                    // AJAX Request
+                    $.ajax({
+                        method: 'POST',
+                        url: '/competitionaway',
+                        data: {'betagainst_id': betagainstid,
+                                },
+                        success: function (response) {
+                            
+                            // Removing row from HTML Table
+                            if (response.success == 1) {
+                                // $(el).closest('.betcard').css('background', 'tomato');
+                                // $(el).closest('.betcard').fadeOut(800, function () {
+                                //     $(this).remove();
+                                // });
+                               alert(response.message);
+                               window.location.reload();
                                 
                                
                             } else {

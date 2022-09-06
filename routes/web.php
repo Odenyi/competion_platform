@@ -64,8 +64,12 @@ Route::get('/betslip', [BettingController::class, 'index']);
 
 });
 
-// competition complete
-Route::get('/competition', [CompetitionController::class, 'betagainst']);
+// competition complete draw
+Route::post('/competition', [CompetitionController::class, 'betagainstdraw']);
+// Competition complete home
+Route::post('/competitionhome', [CompetitionController::class, 'betagainsthome']);
+// Competition complete away
+Route::post('/competitionaway', [CompetitionController::class, 'betagainstaway']);
 
 
 Route::post('/add-to-betslip',[BettingController::class,'addToBetslip']);
