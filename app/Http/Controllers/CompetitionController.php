@@ -12,7 +12,7 @@ class CompetitionController extends Controller
 {
     //
     public function index()
-    {  $availablecompetition = Competition::all();
+    {  $availablecompetition = Competition::where('odd','<',3)->get();
               
         return view('frontend.Competition',compact('availablecompetition'));
     }
