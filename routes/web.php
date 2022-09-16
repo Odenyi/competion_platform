@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CompetitionController;
+use App\Http\Controllers\CompletedController;
 use App\Http\Controllers\Frontend\BettingController;
 use App\Http\Controllers\frontend\PlacedbetController;
 use Illuminate\Support\Facades\Route;
@@ -70,6 +71,9 @@ Route::post('/competition', [CompetitionController::class, 'betagainstdraw']);
 Route::post('/competitionhome', [CompetitionController::class, 'betagainsthome']);
 // Competition complete away
 Route::post('/competitionaway', [CompetitionController::class, 'betagainstaway']);
+
+//completed competition
+Route::get('/completed',[CompletedController::class,'index']);
 
 
 Route::post('/add-to-betslip',[BettingController::class,'addToBetslip']);

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class BettingController extends Controller
 {
-    //
+    //add to betslip
     public function addToBetslip(Request $request){
         $team_name = $request->input('team_name');
         $away_team = $request->input('away_team');

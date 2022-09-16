@@ -83,6 +83,10 @@
                                 <li class="nav-item">
                                     <a class="nav-link @yield('Competition')" href="/competition">Competition</a>
                                 </li>
+                                <!-- completed competition -->
+                                <li class="nav-item">
+                                    <a class="nav-link @yield('Completed')" href="/completed">Completed</a>
+                                </li>
                                 @endauth
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle @yield('Sports')" href="javascript:void(0)"

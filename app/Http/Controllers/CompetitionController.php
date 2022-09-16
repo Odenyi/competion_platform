@@ -12,7 +12,10 @@ class CompetitionController extends Controller
 {
     //
     public function index()
-    {  $availablecompetition = Competition::where('odd','<',3)->get();
+    {   $user_id = Auth::user()->id;
+        $availablecompetition = Competition::whereDoesntHave('availableCompetition', function ($query) {
+            $query->where('user_id',Auth::user()->id);
+        })->where('odd','<',3)->get();
               
         return view('frontend.Competition',compact('availablecompetition'));
     }

@@ -49,13 +49,8 @@
                                         </h4>
                                     </div>
                                     <h6>Division- Belarus</h6>
-                                    @foreach($competition->availableCompetition as $compete)
-                                    
-                                    <h6>{{$compete->bet_type}}</h6>
-                                    @endforeach
-
-                                    
-                                    <h6>{{$competition->amount->amount}}</h6>  
+                                   
+                                    <h6> Bet Amount &nbsp;Ksh.{{$competition->amount->amount}}</h6>  
                                   
                                     
                                 </div>

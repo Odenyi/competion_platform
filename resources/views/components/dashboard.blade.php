@@ -80,6 +80,12 @@ $firstname = explode(" ", auth()->user()->name)[0];
                                 <li class="nav-item">
                                     <a class="nav-link @yield('Competition')" href="/competition">Competition</a>
                                 </li>
+
+                                <!-- completed competiton -->
+                                <li class="nav-item">
+                                    <a class="nav-link @yield('Completed')" href="/completed">Completed</a>
+                                </li>
+
                                 <li class="nav-item dropdown main-navbar">
                                     <a class="nav-link dropdown-toggle" href="javascript:void(0)"
                                         data-bs-toggle="dropdown" data-bs-auto-close="outside">Sports</a>
