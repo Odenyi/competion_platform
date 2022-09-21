@@ -175,7 +175,16 @@ $(function ($) {
                   'bet_odds': bet_odds
               },
               success: function(response){
-                  console.log(response.message);
+                 let el =$('#volnabtn')
+                  if(response.Success == 2){
+                   arsenalbtn.classList.remove("colorbutton")
+                    volnabtn.classList.add("colorbutton")
+                   
+                  }
+                  else{
+                    volnabtn.classList.remove("colorbutton")
+                   
+                  }
               
                   
 
@@ -185,6 +194,7 @@ $(function ($) {
             });
           }
 
+         
             $(' .active-bet').attr("disabled", false)
 
             //bet against someone for team to draw
@@ -362,7 +372,21 @@ $(function ($) {
                   'bet_odds': bet_odds
               },
               success: function(response){
-                  console.log(response.message);
+                let el = $('#arsenalbtn');
+                 if(response.Success === 2){
+                  volnabtn.classList.remove("colorbutton")
+                 
+                  arsenalbtn.classList.add("colorbutton")
+                 
+                  
+                 }
+                 else{
+                  
+                  arsenal.classList.remove("colorbutton");
+                  console.log(response.message)
+                  
+                                    
+                 }
               
                  
 
@@ -371,6 +395,8 @@ $(function ($) {
           });
       });
   }
+
+
         // Delete bets
 
         $.ajaxSetup({

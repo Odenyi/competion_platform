@@ -2598,7 +2598,9 @@ p {
   background-color: #571ce0;
   box-shadow: 4px 6.928px 24px 0px rgba(0, 0, 0, 0.18);
 }
-
+.colorbutton{
+  background-color: red;
+}
 .currency-bet-section {
   margin-top: -120px;
   transform: translateZ(10px);

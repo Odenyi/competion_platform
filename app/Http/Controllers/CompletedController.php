@@ -10,7 +10,7 @@ class CompletedController extends Controller
     //show completed competition
     public function index()
     {
-        $availablecompetition = Competition::where('odd',3)->get();
+        $availablecompetition = Competition::where('status','completed')->get();
               
         return view('frontend.Completed',compact('availablecompetition'));
     }

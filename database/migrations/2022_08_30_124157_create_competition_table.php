@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('odd');
             $table->string('start_time');
             $table->string('end_time');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ class Competition extends Model
         'away_team',
         'odd',
         'start_time',
-        'end_time'
+        'end_time',
+        'status'
         
     ];
     public function availableCompetition()

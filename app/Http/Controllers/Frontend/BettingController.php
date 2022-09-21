@@ -21,10 +21,28 @@ class BettingController extends Controller
         if(Auth::check()){
             $betitemcheck = Bets::where('user_id',$user_id)->where('game_id',$game_id)->exists();
             if($betitemcheck){
+                if(Bets::where('user_id',$user_id)->where('game_id',$game_id)->where('bet_type', $bet_type)->exists()){
+                $deleteitem = Bets::where('user_id',$user_id)->where('game_id',$game_id)->where('bet_type', $bet_type)->first();
+                $deleteitem->delete();
                 return response()->json([
-                    'Success'=>true,
-                    'message' =>'Bet already added'
+                    'Success'=>1,
+                    'message' =>'Bet deleted'
                 ]);
+
+            }
+            else{
+                $updatebettype = Bets::where('user_id',$user_id)->where('game_id',$game_id)->first();
+                $updatebettype->bet_type = $bet_type;
+                $updatebettype->update();
+
+                return response()->json([
+                    'Success'=>2,
+                    'message' =>'Bet upadted'
+                ]);
+
+
+            }
+
             }
             else{
                 
@@ -37,7 +55,7 @@ class BettingController extends Controller
             $betslip->odds = $request->input('bet_odds');
             $betslip->save();
             return response()->json([
-                'success' => true,
+                'Success' => 2,
                 'message' => 'Bet added to Betslip'
             ]);
             

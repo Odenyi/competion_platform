@@ -53,6 +53,12 @@ class CompetitionController extends Controller
                     $odd = $competition->odd + 1;
                     $competition->odd = $odd;
                     $competition->update();
+                    // check game completion
+                    $completeodd =  $competition->odd;
+                    if( $completeodd == 3){
+                        $competition->status = 'completed';
+                        $competition->update();
+                    }
 
                     
 
@@ -121,6 +127,14 @@ class CompetitionController extends Controller
                     $competition->odd = $odd;
                     $competition->update();
 
+                    // check game completion
+                    $completeodd =  $competition->odd;
+                    if( $completeodd == 3){
+                        $competition->status = 'completed';
+                        $competition->update();
+                    }
+
+
                     
 
                    
@@ -186,6 +200,14 @@ class CompetitionController extends Controller
                     $odd = $competition->odd + 1;
                     $competition->odd = $odd;
                     $competition->update();
+
+                    // check game completion
+                    $completeodd =  $competition->odd;
+                    if( $completeodd == 3){
+                        $competition->status = 'completed';
+                        $competition->update();
+                    }
+
 
                     
 
