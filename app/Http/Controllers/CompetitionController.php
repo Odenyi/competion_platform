@@ -15,7 +15,7 @@ class CompetitionController extends Controller
     {   $user_id = Auth::user()->id;
         $availablecompetition = Competition::whereDoesntHave('availableCompetition', function ($query) {
             $query->where('user_id',Auth::user()->id);
-        })->where('odd','<',3)->get();
+        })->WhereNull('status')->get();
               
         return view('frontend.Competition',compact('availablecompetition'));
     }

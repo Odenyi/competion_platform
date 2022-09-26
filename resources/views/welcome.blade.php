@@ -491,8 +491,8 @@
                             <div class="bottom-item">
                                 <button type="button" class="cmn-btn firstTeam" data-bs-toggle="modal" id="arsenalbtn"
                                     data-bs-target="#">Arsenal will win</button>
-                                <button type="button" class="cmn-btn draw" data-bs-toggle="modal"
-                                    data-bs-target="#betpop-up">Draw</button>
+                                <button type="button" class="cmn-btn draw" data-bs-toggle="modal"  id="drawbtn"
+                                    data-bs-target="#">Draw</button>
                                 <button type="button" class="cmn-btn lastTeam" data-bs-toggle="modal"
                                     data-bs-target="#" id="volnabtn">Volna will win</button>
                             </div>

@@ -99,26 +99,16 @@ $(function ($) {
     let total =0;
     let amount =$('.InDeVal1').val();
     let oddsarray = [];
-    let Oddsvalue = document.querySelectorAll('.odds')
-    for(let i=0;i<Oddsvalue.length;i++){
-      let odds =Oddsvalue[i].innerText;
-      oddsarray.push(odds);
-    }
-       
-   
-    oddsarray.forEach((odd )=>{
-      total += parseInt(odd)
+    let Oddsvalue =$('.betodd').val();
+  
+      total += parseInt(Oddsvalue)
      
-    } );
+ 
     
     let totalamount =(total*amount);
-    let betpeerfee =5/100*totalamount;
-    
-    let recievableamount = totalamount-betpeerfee
-    $('.betpeerfee').empty();
-    $('.betpeerfee').append(betpeerfee);
+   
     $('.amount').empty();
-    $('.amount').append(recievableamount);
+    $('.amount').append(totalamount);
   }
 
     // Login Reg Tab
@@ -149,7 +139,53 @@ $(function ($) {
 
           // add to betslip
           let arsenalbtn = document.getElementById('arsenalbtn');
+          let drawbtn = document.getElementById('drawbtn');
           let volnabtn = document.getElementById('volnabtn');
+          if(drawbtn){
+            drawbtn.addEventListener('click', function() {
+            let hometeam= document.getElementById('Arsenal').innerText;
+          let awayteam = document.getElementById('volna').innerText
+          let game_id=1;
+          let team_id=2;
+          let bet_type=0;
+          let bet_odds=1;
+          $.ajaxSetup({
+              headers: {
+                  'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+              }
+          });
+          $.ajax({
+              type: 'POST',
+              url: '/add-to-betslip',
+              data: {
+                  'team_name': hometeam,
+                  'away_team':awayteam,
+                  'game_id': game_id,
+                  'team_id': team_id,
+                  'bet_type': bet_type,
+                  'bet_odds': bet_odds
+              },
+              success: function(response){
+                 let el =$('#volnabtn')
+                  if(response.Success == 2){
+                   arsenalbtn.classList.remove("colorbutton")
+                    volnabtn.classList.remove("colorbutton")
+                    drawbtn.classList.add("colorbutton")
+                   
+                  }
+                  else{
+                    drawbtn.classList.remove("colorbutton")
+                   
+                  }
+              
+                  
+
+              
+                    }
+                });
+            });
+
+          }
           if(volnabtn){
             volnabtn.addEventListener('click', function() {
               let hometeam= document.getElementById('Arsenal').innerText;
@@ -178,6 +214,7 @@ $(function ($) {
                  let el =$('#volnabtn')
                   if(response.Success == 2){
                    arsenalbtn.classList.remove("colorbutton")
+                   drawbtn.classList.remove("colorbutton")
                     volnabtn.classList.add("colorbutton")
                    
                   }
@@ -375,7 +412,7 @@ $(function ($) {
                 let el = $('#arsenalbtn');
                  if(response.Success === 2){
                   volnabtn.classList.remove("colorbutton")
-                 
+                  drawbtn.classList.remove("colorbutton")
                   arsenalbtn.classList.add("colorbutton")
                  
                   

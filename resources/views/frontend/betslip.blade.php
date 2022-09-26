@@ -22,8 +22,13 @@ $total_bets = 0;
                                         <input type="hidden" class="delete_class update_class" value="{{$bet->id}}">
                                         <div class="d-flex align-items-center justify-content-between mb-4">
                                         <h6> {{$bet->home_team}} X {{$bet->away_team}}</h6>
-                                                            
-                                        <h6 class="odds">{{$bet->bet_type}}</h6>
+                                         <input type="hidden" class="betodd" value="{{$bet->odds}}">                 
+                                        <h6 class="odds">@if ($bet->bet_type == 0)
+                                            X 
+                                            @else
+                                            {{ $bet->bet_type }}
+                                             @endif
+                                            </h6>
                                         <a href="javascript:void(0);" class="text-danger deleteicon " 
                                             data-bs-container="#tooltip-container1" data-bs-toggle="tooltip" 
                                             data-bs-placement="top" title="Delete">
@@ -77,8 +82,10 @@ $total_bets = 0;
                                     </div>
                                     <div class="bottom-area">
                                         <div class="fee-area">
-                                            <p>Winner will get: <span class="amount"></span></p>
-                                            <p class="fee">BetPeer Fee: <span>5%: </span><span class="betpeerfee"></span></p>
+                                            <p>Amount: <span class="amount"></span></p>
+                                            <p class="fee">Available Balance:<span class="betpeerfee">@foreach ( $useraccount as $account)
+                                            {{$account->amount}}
+                                            @endforeach</span></p>
                                         </div>
                                         <div class="btn-area">
                                             <button class="placebet">Make Bet</button>

@@ -20,7 +20,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap");
 :root {
   --body-font: "Nunito Sans", sans-serif;
-  --body-color: #120f54;
+  --body-color: #198754;
   --body-alt-color: #0d102f;
   --bg-color: #120f54;
   --head-color: #41cd7d;
@@ -2515,7 +2515,7 @@ p {
   height: 0;
 }
 .active-bet{
-  background-color: red;
+  background-color: #fb771a;
   pointer-events: none;
 }
 
@@ -2599,7 +2599,7 @@ p {
   box-shadow: 4px 6.928px 24px 0px rgba(0, 0, 0, 0.18);
 }
 .colorbutton{
-  background-color: red;
+  background-color: #fb771a;
 }
 .currency-bet-section {
   margin-top: -120px;

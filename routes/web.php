@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CompetitionController;
 use App\Http\Controllers\CompletedController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\BettingController;
 use App\Http\Controllers\frontend\PlacedbetController;
 use Illuminate\Support\Facades\Route;
@@ -52,9 +53,9 @@ Route::get('/', function () {
 
 // Routes for logged-in users
 Route::group(['middleware' => ['auth']], function () {
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+Route::get('/dashboard', [DashboardController::class,'index']);
+
+Route::post('/depositamount', [DashboardController::class,'update']);
 
  //remove from betslip
  Route::post('/delete-betslip',[BettingController::class,'deleteBetslip']);

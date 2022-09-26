@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Bets;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\UserAccounts;
 use GrahamCampbell\ResultType\Success;
 use Illuminate\Support\Facades\Auth;
 
@@ -73,7 +74,8 @@ class BettingController extends Controller
     // show betslip
     public function index(){
         $bets = Bets::where('user_id',Auth::user()->id)->get();
-        return view('frontend.betslip',compact('bets'));
+        $useraccount = UserAccounts::where('user_id',Auth::user()->id)->get();
+        return view('frontend.betslip',compact('bets', 'useraccount'));
     }
     //delete bet from betslip
     public function deleteBetslip(Request $request){

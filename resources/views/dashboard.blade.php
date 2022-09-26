@@ -55,7 +55,9 @@
                             <div class="balance">
                                 <div class="single-item">
                                     <img src="assets/images/icon/dashboard-sidebar-icon-1.png" alt="images">
-                                    <h5>Ksh.1,000.00</h5>
+                                    <h5>@foreach ($useraccount as $account)
+                                            Ksh. {{ $account->amount}}
+                                                @endforeach </h5>
                                     <p>Available Balance</p>
                                 </div>
                                 <div class="bottom-area d-flex align-items-center justify-content-between">
@@ -377,7 +379,9 @@
                                                     <p class="mdr">Current Balance</p>
                                                     
                                                 </div>
-                                                <h6><span>KSH</span>1,000 </h6>
+                                                <h6><span>KSH</span>@foreach ($useraccount as $account)
+                                                {{ $account->amount}}
+                                                @endforeach</h6>
                                                 
                                             </div>
                                         </div>
@@ -385,19 +389,18 @@
                                             <div class="right-area">
                                                 <h5>Deposit</h5>
                                                 <div class="address-bar">
-                                                    <form action="">
+                                                    <form action="/depositamount" method="POST" id="depositform">
                                                         <p>Send money into your BetPeer account</p>
                                                      
                                                         <div class="input-single">
                                                             <label>Amount</label>
                                                             <div class="input-area">
-                                                                <input type="text" placeholder="Enter Amount">
+                                                                <input type="text" placeholder="Enter Amount" name="depositamount">
                                                             </div>
                                                         </div>
                                                         
                                                         <span class="btn-border">
-                                                            <a href="javascript:void(0)" class="cmn-btn">Get Start
-                                                                Now</a>
+                                                            <a href="javascript:void(0)" class="cmn-btn" onclick="document.getElementById('depositform').submit()">Deposit</a>
                                                         </span>
                                                     
                                                     
@@ -419,7 +422,9 @@
                                                         <p class="mdr">Current Balance</p>
                                                         
                                                 </div>
-                                                <h6><span>KSH</span>1,000 </h6>
+                                                <h6><span>KSH</span>@foreach ($useraccount as $account)
+                                                {{ $account->amount}}
+                                                @endforeach </h6>
                                             </div>
                                         </div>
                                         <div class="col-xxl-8 col-xl-7">
