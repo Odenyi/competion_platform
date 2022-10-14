@@ -65,8 +65,8 @@
                                                                         class="checkbox-single d-flex align-items-center">
                                                                         <span class="left-area">
                                                                             <span class="checkbox-area d-flex">
-                                                                                <input type="checkbox"
-                                                                                    checked="checked">
+                                                                                <input type="checkbox" name="remember_me" id="remember_me"
+                                                                                 checked>
                                                                                 <span class="checkmark"></span>
                                                                             </span>
                                                                             <span
@@ -489,11 +489,11 @@
                                 </div>
                             </div>
                             <div class="bottom-item">
-                                <button type="button" class="cmn-btn firstTeam" data-bs-toggle="modal" id="arsenalbtn"
+                                <button type="button" class="cmn-btn firstTeam activebtn @auth @foreach($bets as $bet){{$bet->bet_type ==1 ?'colorbutton':''}} @endforeach @endauth " data-bs-toggle="modal" id="arsenalbtn"
                                     data-bs-target="#">Arsenal will win</button>
-                                <button type="button" class="cmn-btn draw" data-bs-toggle="modal"  id="drawbtn"
+                                <button type="button" class="cmn-btn draw activebtn @auth @foreach($bets as $bet){{$bet->bet_type ==0 ?'colorbutton':''}} @endforeach @endauth " data-bs-toggle="modal"  id="drawbtn"
                                     data-bs-target="#">Draw</button>
-                                <button type="button" class="cmn-btn lastTeam" data-bs-toggle="modal"
+                                <button type="button" class="cmn-btn lastTeam activebtn @auth @foreach($bets as $bet){{$bet->bet_type ==2 ?'colorbutton':''}} @endforeach @endauth " data-bs-toggle="modal"
                                     data-bs-target="#" id="volnabtn">Volna will win</button>
                             </div>
                         </div>

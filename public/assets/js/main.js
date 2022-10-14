@@ -2,6 +2,23 @@ $(function ($) {
   "use strict";
 
   jQuery(document).ready(function () {
+    // Refresh games page
+    
+  if(window.location.href == "http://127.0.0.1:8000/competition"){
+      setInterval(function() {
+        // var page = window.location.href;
+        // console.log(window.location.href)
+        // $.ajax({
+        // url: page+'/new',
+        // success:function(data)
+        // {
+         $('#teamsarea').load(window.location.href+'/new').fadeIn('slow');
+        // }
+        // });
+      }, 5000);
+      
+   
+    } 
 
     // preloader
     $("#preloader").delay(300).animate({
@@ -166,10 +183,10 @@ $(function ($) {
                   'bet_odds': bet_odds
               },
               success: function(response){
-                 let el =$('#volnabtn')
+                
                   if(response.Success == 2){
-                   arsenalbtn.classList.remove("colorbutton")
-                    volnabtn.classList.remove("colorbutton")
+                   $('.activebtn').removeClass("colorbutton")
+                    
                     drawbtn.classList.add("colorbutton")
                    
                   }
@@ -211,10 +228,8 @@ $(function ($) {
                   'bet_odds': bet_odds
               },
               success: function(response){
-                 let el =$('#volnabtn')
                   if(response.Success == 2){
-                   arsenalbtn.classList.remove("colorbutton")
-                   drawbtn.classList.remove("colorbutton")
+                    $('.activebtn').removeClass("colorbutton")
                     volnabtn.classList.add("colorbutton")
                    
                   }
@@ -232,18 +247,23 @@ $(function ($) {
           }
 
          
-            $(' .active-bet').attr("disabled", false)
+            
 
             //bet against someone for team to draw
-            $('.clickbuttondraw').on('click', function (e) {
-
-              var el = this;
+            let drawbetbtn = document.querySelectorAll(".clickbuttondraw"); // quaryselectorall will return and nodelist of button with classnaem .unLockUser-button
+            drawbetbtn .forEach((btn, index) => {// index will be current button index
+              btn.addEventListener("click", function(e) {
+                console.log(e.target, index)
+           
+            
               e.preventDefault();
+              var el = this;
+              
           
               let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
               let betvalue = 0;
-              
               console.log(betagainstid)
+           
 
               $.ajaxSetup({
                 headers: {
@@ -281,7 +301,8 @@ $(function ($) {
                 }
     
             });
-            });
+          });
+        })
 
             //bet against someone for hometeam to win
             $('.clickbuttonhome').on('click', function (e) {
@@ -409,18 +430,17 @@ $(function ($) {
                   'bet_odds': bet_odds
               },
               success: function(response){
-                let el = $('#arsenalbtn');
+                
                  if(response.Success === 2){
-                  volnabtn.classList.remove("colorbutton")
-                  drawbtn.classList.remove("colorbutton")
+                  $('.activebtn').removeClass("colorbutton")
                   arsenalbtn.classList.add("colorbutton")
-                 
+                                  
                   
                  }
                  else{
                   
-                  arsenal.classList.remove("colorbutton");
-                  console.log(response.message)
+                  arsenalbtn.classList.remove("colorbutton");
+                  
                   
                                     
                  }
@@ -432,6 +452,9 @@ $(function ($) {
           });
       });
   }
+
+ 
+
 
 
         // Delete bets

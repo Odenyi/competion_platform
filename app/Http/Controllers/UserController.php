@@ -36,7 +36,10 @@ class UserController extends Controller
             'password'=>'required','password'
             
         ]);
-        if(auth()->attempt($formFields)){
+        $remember = $request->remember_me; 
+        $remember_me = !empty ($remember)?true:false;
+        if(auth()->attempt($formFields, $remember_me)){
+            $user = auth()->user();
             $request->session()->regenerate();
             return redirect('/')->with('message','User Logged in succesfully');
         }

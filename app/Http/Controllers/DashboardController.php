@@ -17,15 +17,25 @@ class DashboardController extends Controller
 
     public function update(Request $request)
 {
-     $this->validate($request, [
-        'amount' => 'required'
-    ]);
+    
     // Create Post
-    $account = UserAccounts::find(Auth::user()->id);
-    $account->amount += $request->input('depositamount');
+    $account = UserAccounts::where('user_id',Auth::user()->id)->first();
+    $amount = $request->input('depositamount') + $account->amount;
+    $account->amount = $amount;
     $account->update();
 
-    return redirect('/')->with('success', 'Post Updated');
+    return redirect('/dashboard')->with('message', 'Amount Deposited');
+}
+public function withdraw(Request $request){
+    $account = UserAccounts::where('user_id',Auth::user()->id)->first();
+    if($account->amount >= $request->input('withdrawamount')){
+        $amount = $account->amount - $request->input('withdrawamount');
+        $account->amount = $amount;
+        $account->update();
+        return redirect('/dashboard')->with('message', 'Amount withdrawn');
+    }
+    
+
 }
 
 }

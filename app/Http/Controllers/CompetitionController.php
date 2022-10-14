@@ -15,9 +15,19 @@ class CompetitionController extends Controller
     {   $user_id = Auth::user()->id;
         $availablecompetition = Competition::whereDoesntHave('availableCompetition', function ($query) {
             $query->where('user_id',Auth::user()->id);
-        })->WhereNull('status')->get();
+        })->WhereNull('status')->latest()->get();
               
         return view('frontend.Competition',compact('availablecompetition'));
+    }
+
+    //new competitions
+    public function new()
+    {   $user_id = Auth::user()->id;
+        $availablecompetition = Competition::whereDoesntHave('availableCompetition', function ($query) {
+            $query->where('user_id',Auth::user()->id);
+        })->WhereNull('status')->get();
+              
+        return view('components.teamsdata',compact('availablecompetition'));
     }
  
     // home team 

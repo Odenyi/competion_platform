@@ -390,12 +390,13 @@
                                                 <h5>Deposit</h5>
                                                 <div class="address-bar">
                                                     <form action="/depositamount" method="POST" id="depositform">
+                                                        @csrf
                                                         <p>Send money into your BetPeer account</p>
                                                      
                                                         <div class="input-single">
                                                             <label>Amount</label>
                                                             <div class="input-area">
-                                                                <input type="text" placeholder="Enter Amount" name="depositamount">
+                                                                <input type="number" placeholder="Enter Amount" name="depositamount">
                                                             </div>
                                                         </div>
                                                         
@@ -432,17 +433,17 @@
                                                 <h5>Withdraw </h5>
                                                
                                                 <div class="address-bar">
-                                                    <form action="#">
+                                                    <form action="/withdrawcash" method="POST" id="withdrawform">
+                                                        @csrf
                                                         <div class="input-single">
                                                             <label>Amount</label>
                                                             <div class="input-area">
-                                                                <input type="text" placeholder="Enter Amount">
+                                                                <input type="number" placeholder="Enter Amount" name="withdrawamount">
                                                             </div>
                                                         </div>
                                                         
                                                         <span class="btn-border">
-                                                            <a href="javascript:void(0)" class="cmn-btn">Get Start
-                                                                Now</a>
+                                                            <a href="javascript:void(0)" class="cmn-btn" onclick="document.getElementById('withdrawform').submit()">Withdraw</a>
                                                         </span>
                                                     </form>
                                                 </div>
