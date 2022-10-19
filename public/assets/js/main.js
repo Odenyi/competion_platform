@@ -4,21 +4,21 @@ $(function ($) {
   jQuery(document).ready(function () {
     // Refresh games page
     
-  if(window.location.href == "http://127.0.0.1:8000/competition"){
-      setInterval(function() {
-        // var page = window.location.href;
-        // console.log(window.location.href)
-        // $.ajax({
-        // url: page+'/new',
-        // success:function(data)
-        // {
-         $('#teamsarea').load(window.location.href+'/new').fadeIn('slow');
-        // }
-        // });
-      }, 5000);
-      
+  // if(window.location.href == "http://127.0.0.1:8000/competition"){
+  //     setInterval(function() {
+  //       // var page = window.location.href;
+  //       // console.log(window.location.href)
+  //       // $.ajax({
+  //       // url: page+'/new',
+  //       // success:function(data)
+  //       // {
+  //        $('#teamsarea').load(window.location.href+'/new').fadeIn('slow');
+  //       // }
+  //       // });
+  //     }, 5000);
+      //
    
-    } 
+    // } 
 
     // preloader
     $("#preloader").delay(300).animate({
