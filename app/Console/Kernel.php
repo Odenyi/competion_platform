@@ -39,13 +39,15 @@ class Kernel extends ConsoleKernel
                 Competition::where('odd',1)->delete();
                 }
                 }
-
                 }
 
                 
 
             }
         })->everyMinute();
+        $schedule->call(function(){
+            
+        })->everyFiveMinutes();
     }
 
     /**
