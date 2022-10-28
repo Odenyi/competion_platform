@@ -13,11 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('tournaments', function (Blueprint $table) {
+        Schema::create('finished_bets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('amount');
-            $table->integer('bet_type');
+            $table->string('home_team');
+            $table->string('away_team');
+            $table->integer('odd');
+            $table->string('start_time');
+            $table->string('end_time');
             $table->timestamps();
         });
     }
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tournaments');
+        Schema::dropIfExists('finished_bets');
     }
 };

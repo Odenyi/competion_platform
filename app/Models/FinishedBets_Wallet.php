@@ -2,24 +2,24 @@
 
 namespace App\Models;
 
-use App\Http\Controllers\CompetitionController;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VirtualWallet extends Model
+class FinishedBets_Wallet extends Model
 {
     use HasFactory;
-    protected $table = 'virtualwallet';
+    protected $table = 'finishedbets_wallet';
     protected $fillable =[
         'competition_id',
         'user_id',
         'bet_type',
+        'status',
         'amount'
 
         
     ];
-    public function competition()
+    public function closedcompetition()
     {
-        return $this->belongsTo(competition::class,'competition_id','id');
+        return $this->belongsTo(FinishedBets::class,'competition_id','id');
     }
 }
