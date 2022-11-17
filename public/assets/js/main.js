@@ -1,3 +1,5 @@
+// const { parseInt } = require("lodash");
+
 $(function ($) {
   "use strict";
 
@@ -246,366 +248,492 @@ $(function ($) {
             });
           }
 
-         
+          // make bet
+          $('.placebet').click(function (e) {
+            var el = this;
+            e.preventDefault();       
             
-
-            //bet against someone for team to draw
-            let drawbetbtn = document.querySelectorAll(".clickbuttondraw"); // quaryselectorall will return and nodelist of button with classnaem .unLockUser-button
-            drawbetbtn .forEach((btn, index) => {// index will be current button index
-              btn.addEventListener("click", function(e) {
-                console.log(e.target, index)
-           
-            
-              e.preventDefault();
-              var el = this;
-              
-          
-              let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
-              let betvalue = 0;
-              console.log(betagainstid)
-           
-
-              $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-              bootbox.confirm("Do you really want to bet Draw", function (result) {
-
-                if (result) {
-                    // AJAX Request
-                    $.ajax({
-                        method: 'POST',
-                        url: '/competition',
-                        data: {'betagainst_id': betagainstid,
-                                'betvalue ': betvalue},
-                        success: function (response) {
-                            
-                            // Removing row from HTML Table
-                            if (response.success == 1) {
-                                // $(el).closest('.betcard').css('background', 'tomato');
-                                // $(el).closest('.betcard').fadeOut(800, function () {
-                                //     $(this).remove();
-                                // });
-                               alert(response.message);
-                               window.location.reload();
-                                
-                               
-                            } else {
-                                bootbox.alert('Sorry you are not able to bet.');
-                            }
-    
-                        }
-                    });
-                }
-    
-            });
-          });
-        })
-
-            //bet against someone for hometeam to win
-            $('.clickbuttonhome').on('click', function (e) {
-
-              var el = this;
-              e.preventDefault();
-          
-              let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
-              let betvalue = 1;
-              
-             
-
-              $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-              bootbox.confirm("Do you really want to bet Home team to win", function (result) {
-
-                if (result) {
-                    // AJAX Request
-                    $.ajax({
-                        method: 'POST',
-                        url: '/competitionhome',
-                        data: {'betagainst_id': betagainstid,
-                                },
-                        success: function (response) {
-                            
-                            // Removing row from HTML Table
-                            if (response.success == 1) {
-                                // $(el).closest('.betcard').css('background', 'tomato');
-                                // $(el).closest('.betcard').fadeOut(800, function () {
-                                //     $(this).remove();
-                                // });
-                               alert(response.message);
-                               window.location.reload();
-                                
-                               
-                            } else {
-                                bootbox.alert('Sorry you are not able to bet.');
-                            }
-    
-                        }
-                    });
-                }
-    
-            });
-            });
-
-            //bet against someone for awayteam to win
-            $('.clickbuttonaway').on('click', function (e) {
-
-              var el = this;
-              e.preventDefault();
-          
-              let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
-              let betvalue = 2;
-              
-             
-
-              $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-              bootbox.confirm("Do you really want to bet Away team to win", function (result) {
-
-                if (result) {
-                    // AJAX Request
-                    $.ajax({
-                        method: 'POST',
-                        url: '/competitionaway',
-                        data: {'betagainst_id': betagainstid,
-                                },
-                        success: function (response) {
-                            
-                            // Removing row from HTML Table
-                            if (response.success == 1) {
-                                // $(el).closest('.betcard').css('background', 'tomato');
-                                // $(el).closest('.betcard').fadeOut(800, function () {
-                                //     $(this).remove();
-                                // });
-                               alert(response.message);
-                               window.location.reload();
-                                
-                               
-                            } else {
-                                bootbox.alert('Sorry you are not able to bet.');
-                            }
-    
-                        }
-                    });
-                }
-    
-            });
-            });
-            
-
-          if(arsenalbtn ){
-          arsenalbtn.addEventListener('click', function() {
-              
-      
-          let hometeam= document.getElementById('Arsenal').innerText;
-          let awayteam = document.getElementById('volna').innerText
-          let game_id=1;
-          let team_id=2;
-          let bet_type=1;
-          let bet_odds=1;
-          $.ajaxSetup({
+            $.ajaxSetup({
               headers: {
                   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
               }
           });
-          $.ajax({
-              type: 'POST',
-              url: '/add-to-betslip',
-              data: {
-                  'team_name': hometeam,
-                  'away_team':awayteam,
-                  'game_id': game_id,
-                  'team_id': team_id,
-                  'bet_type': bet_type,
-                  'bet_odds': bet_odds
-              },
-              success: function(response){
+            
+            let amount =$('.InDeVal1').val();
+            let amountrecievable = document.querySelector('.amount').innerText;
+          
+
+            let betpeerfee = document.querySelector('.betpeerfee').innerText;
+            console.log(betpeerfee)
+
+
+
+            $.ajax({
+                type: 'POST',
+                url: '/placebet',
+                data: {
+                    'amount': amount,
+                    'amountrecievable': amountrecievable,
+                    
+                },
+                success: function(response){
+                    console.log(response);
+                    window.location.reload();
+
+                  
+                    // alert(response.message);
+
                 
-                 if(response.Success === 2){
-                  $('.activebtn').removeClass("colorbutton")
-                  arsenalbtn.classList.add("colorbutton")
-                                  
-                  
-                 }
-                 else{
-                  
-                  arsenalbtn.classList.remove("colorbutton");
-                  
-                  
-                                    
-                 }
-              
-                 
-
-              
-              }
+                }
+            });
           });
-      });
-  }
 
- 
-
-
-
-        // Delete bets
-
-        $.ajaxSetup({
-          headers: {
-              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-          }
-      });
-    $('.deleteicon').click(function (e) {
-        var el = this;
-        e.preventDefault();
+                  //bet against someone for team to draw
+                  let drawbetbtn = document.querySelectorAll(".clickbuttondraw"); // quaryselectorall will return and nodelist of button with classnaem .unLockUser-button
+                  drawbetbtn .forEach((btn, index) => {// index will be current button index
+                    btn.addEventListener("click", function(e) {
+                      console.log(e.target, index)
+                 
+                  
+                    e.preventDefault();
+                    var el = this;
+                    
+                
+                    let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
+                    let betvalue = 0;
+                    console.log(betagainstid)
+                 
       
+                    $.ajaxSetup({
+                      headers: {
+                          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                  });
       
-
-            // Delete id
-        let deleteid =$(el).closest('.betcard').find('.delete_class').val();
-          console.log(deleteid);
-
-        // Confirm box
-        bootbox.confirm("Do you really want to delete the bet?", function (result) {
-
-            if (result) {
-                // AJAX Request
-                $.ajax({
-                    method: 'POST',
-                    url: '/delete-betslip',
-                    data: {'betitem_id': deleteid},
-                    success: function (response) {
-                        
-                        // Removing row from HTML Table
-                        if (response.success == 1) {
-                            $(el).closest('.betcard').css('background', 'tomato');
-                            $(el).closest('.betcard').fadeOut(800, function () {
-                                $(this).remove();
-                            });
-                           
-                            
-                           
-                        } else {
-                            bootbox.alert('Record not deleted.');
-                        }
-
+                    bootbox.confirm("Do you really want to bet Draw", function (result) {
+      
+                      if (result) {
+                          // AJAX Request
+                          $.ajax({
+                              method: 'POST',
+                              url: '/competition',
+                              data: {'betagainst_id': betagainstid,
+                                      'betvalue ': betvalue},
+                              success: function (response) {
+                                  
+                                  // Removing row from HTML Table
+                                  if (response.success == 1) {
+                                      // $(el).closest('.betcard').css('background', 'tomato');
+                                      // $(el).closest('.betcard').fadeOut(800, function () {
+                                      //     $(this).remove();
+                                      // });
+                                     alert(response.message);
+                                     window.location.reload();
+                                      
+                                     
+                                  } else {
+                                      bootbox.alert('Sorry you are not able to bet.');
+                                  }
+          
+                              }
+                          });
+                      }
+          
+                  });
+                });
+              })
+      
+                  //bet against someone for hometeam to win
+                  $('.clickbuttonhome').on('click', function (e) {
+      
+                    var el = this;
+                    e.preventDefault();
+                
+                    let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
+                    let betvalue = 1;
+                    
+                   
+      
+                    $.ajaxSetup({
+                      headers: {
+                          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                  });
+      
+                    bootbox.confirm("Do you really want to bet Home team to win", function (result) {
+      
+                      if (result) {
+                          // AJAX Request
+                          $.ajax({
+                              method: 'POST',
+                              url: '/competitionhome',
+                              data: {'betagainst_id': betagainstid,
+                                      },
+                              success: function (response) {
+                                  
+                                  // Removing row from HTML Table
+                                  if (response.success == 1) {
+                                      // $(el).closest('.betcard').css('background', 'tomato');
+                                      // $(el).closest('.betcard').fadeOut(800, function () {
+                                      //     $(this).remove();
+                                      // });
+                                     alert(response.message);
+                                     window.location.reload();
+                                      
+                                     
+                                  } else {
+                                      bootbox.alert('Sorry you are not able to bet.');
+                                  }
+          
+                              }
+                          });
+                      }
+          
+                  });
+                  });
+      
+                  //bet against someone for awayteam to win
+                  $('.clickbuttonaway').on('click', function (e) {
+      
+                    var el = this;
+                    e.preventDefault();
+                
+                    let betagainstid=$(el).closest('.betagainst').find('.betagainstinput').val();
+                    let betvalue = 2;
+                    
+                   
+      
+                    $.ajaxSetup({
+                      headers: {
+                          'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                      }
+                  });
+      
+                    bootbox.confirm("Do you really want to bet Away team to win", function (result) {
+      
+                      if (result) {
+                          // AJAX Request
+                          $.ajax({
+                              method: 'POST',
+                              url: '/competitionaway',
+                              data: {'betagainst_id': betagainstid,
+                                      },
+                              success: function (response) {
+                                  
+                                  // Removing row from HTML Table
+                                  if (response.success == 1) {
+                                      // $(el).closest('.betcard').css('background', 'tomato');
+                                      // $(el).closest('.betcard').fadeOut(800, function () {
+                                      //     $(this).remove();
+                                      // });
+                                     alert(response.message);
+                                     window.location.reload();
+                                      
+                                     
+                                  } else {
+                                      bootbox.alert('Sorry you are not able to bet.');
+                                  }
+          
+                              }
+                          });
+                      }
+          
+                  });
+                  });
+                  
+      
+                if(arsenalbtn ){
+                arsenalbtn.addEventListener('click', function() {
+                    
+            
+                let hometeam= document.getElementById('Arsenal').innerText;
+                let awayteam = document.getElementById('volna').innerText
+                let game_id=1;
+                let team_id=2;
+                let bet_type=1;
+                let bet_odds=1;
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-            }
-
-        });
-
-    });
-
-   
-
-      //change input at interval and detect events
-      $.event.special.inputchange = {
-        setup: function() {
-            var self = this, val;
-            $.data(this, 'timer', window.setInterval(function() {
-                val = self.value;
-                if ( $.data( self, 'cache') != val ) {
-                    $.data( self, 'cache', val );
-                    $( self ).trigger( 'inputchange' );
+                $.ajax({
+                    type: 'POST',
+                    url: '/add-to-betslip',
+                    data: {
+                        'team_name': hometeam,
+                        'away_team':awayteam,
+                        'game_id': game_id,
+                        'team_id': team_id,
+                        'bet_type': bet_type,
+                        'bet_odds': bet_odds
+                    },
+                    success: function(response){
+                      
+                       if(response.Success === 2){
+                        $('.activebtn').removeClass("colorbutton")
+                        arsenalbtn.classList.add("colorbutton")
+                                        
+                        
+                       }
+                       else{
+                        
+                        arsenalbtn.classList.remove("colorbutton");
+                        
+                        
+                                          
+                       }
+                    
+                       
+      
+                    
+                    }
+                });
+            });
+        }
+      
+       
+      
+      
+      
+              // Delete bets
+      
+              $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
-            }, 20));
-        },
-        teardown: function() {
-            window.clearInterval( $.data(this, 'timer') );
-        },
-        add: function() {
-            $.data(this, 'cache', this.value);
-        }
-    };
-     //Update total
-     $('.InDeVal1').on('inputchange', function() {
-      calculatetotalamount();
-    });
-
-     
-// make bet
-$('.placebet').click(function (e) {
-      var el = this;
-      e.preventDefault();       
+            });
+          $('.deleteicon').click(function (e) {
+              var el = this;
+              e.preventDefault();
+            
+            
       
-      $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
+                  // Delete id
+              let deleteid =$(el).closest('.betcard').find('.delete_class').val();
+                console.log(deleteid);
       
-      let amount =$('.InDeVal1').val();
-      let amountrecievable = document.querySelector('.amount').innerText;
-     
-
-      let betpeerfee = document.querySelector('.betpeerfee').innerText;
-      console.log(betpeerfee)
-    
-
-  
-      $.ajax({
-          type: 'POST',
-          url: '/placebet',
-          data: {
-              'amount': amount,
-              'amountrecievable': amountrecievable,
-              
-          },
-          success: function(response){
-              console.log(response);
-              window.location.reload();
-
-             
-              // alert(response.message);
-
+              // Confirm box
+              bootbox.confirm("Do you really want to delete the bet?", function (result) {
+      
+                  if (result) {
+                      // AJAX Request
+                      $.ajax({
+                          method: 'POST',
+                          url: '/delete-betslip',
+                          data: {'betitem_id': deleteid},
+                          success: function (response) {
+                              
+                              // Removing row from HTML Table
+                              if (response.success == 1) {
+                                  $(el).closest('.betcard').css('background', 'tomato');
+                                  $(el).closest('.betcard').fadeOut(800, function () {
+                                      $(this).remove();
+                                  });
+                                 
+                                  
+                                 
+                              } else {
+                                  bootbox.alert('Record not deleted.');
+                              }
+      
+                          }
+                      });
+                  }
+      
+              });
+      
+          });
+      
+         
+      
+            //change input at interval and detect events
+            $.event.special.inputchange = {
+              setup: function() {
+                  var self = this, val;
+                  $.data(this, 'timer', window.setInterval(function() {
+                      val = self.value;
+                      if ( $.data( self, 'cache') != val ) {
+                          $.data( self, 'cache', val );
+                          $( self ).trigger( 'inputchange' );
+                      }
+                  }, 20));
+              },
+              teardown: function() {
+                  window.clearInterval( $.data(this, 'timer') );
+              },
+              add: function() {
+                  $.data(this, 'cache', this.value);
+              }
+          };
+           //Update total
+           $('.InDeVal1').on('inputchange', function() {
+            calculatetotalamount();
+          });
+      
+           
+      
           
-          }
-      });
-  });
- 
+      
+          // Enable Google Authentication
+          $( "#switch" ).change(function() {
+            $( ".google-authentication" ).slideToggle( "slow" );
+          });
+      
+          // Betpop Up Modal Active
+          $('.bottom-item .firstTeam').on('click', function () {
+            $(".top-item .cmn-btn").removeClass("active");
+            $(".top-item .firstTeam").addClass("active");
+          });
+          $('.bottom-item .lastTeam').on('click', function () {
+            $(".top-item .cmn-btn").removeClass("active");
+            $(".top-item .lastTeam").addClass("active");
+          });
+          $('.bottom-item .draw').on('click', function () {
+            $(".top-item .cmn-btn").removeClass("active");
+            $(".top-item .draw").addClass("active");
+          });
+      
+          // Blog Reply btn
+          var replybtn = $(".reply-btn");
+          $(replybtn).on('click', function () {
+            $(this).next().slideToggle('slow');
+          });
+      
+          // social link active
+          var socialLink = $(".social-link a");
+          $(socialLink).on('mouseover', function () {
+            $(socialLink).removeClass('active');
+            $(this).addClass('active');
+          });
+      
+
+         
+            //run mpesa stk push check if user has cancelled and success of transaction
+            document.getElementById('depositviaMpesa').addEventListener('click', (event) => {
+                   event.preventDefault()
+                    const requestBody = {amount: document.getElementById('depositamount').value
+                     }
+                    
+                    axios.post('/stkpush/creditaccount', requestBody).then((response) => {
+                     
+                          if(response.status === 200)
+                          {
+                            const res =  response
+                            let interval;
+
+                            let startTime = new Date().getTime()
+                            let stopTime = new Date().getTime() + 25000;
+                            let stkreqres = res.data.CheckoutRequestID
+                            console.log(stkreqres)
+                            const callback = async () => {
+                              let now = new Date().getTime()
+              
+                              if(now > stopTime){
+                                  clearInterval(interval)
+                                  $('#c2b_response').show()
+                                  document.getElementById('c2b_response').innerHTML = "your payment request has timed out"
+                                  document.getElementById('c2b_response').style.color = "red"
+                                  setTimeout(failedPayment,5000)
+                                        
+                                  function failedPayment(){
+                                    $('#c2b_response').fadeOut()
+                                  // window.location.reload()
+                                  }
+                              }
+                              
+                              const _poll = await fetch('/confirmationstk/' + stkreqres)
+
+                                if(_poll.status === 200) {
+                                    const _res = await _poll.json()
+
+                                    if(_res.errorCode){}
+                                    else if(_res.ResultCode && _res.ResultCode == 0) {
+                                        clearInterval(interval)
+                                        let depositedamount1 = JSON.parse(res.config.data);
+                                        let depositedamount = depositedamount1.amount
+                                        $.ajax({
+                                          method: 'GET',
+                                          url: '/senddarajaapidata',
+                                          data: {'depositedamount': depositedamount},
+                                          success: function (response) {
+                                              
+                                              // Removing row from HTML Table
+                                              if (response.success == 1) {
+                                                
+                                                 alert(response.message);
+                                                 window.location.reload();
+                                                  
+                                                 
+                                              }
+                                            }
+                                          });
+                                        $('#c2b_response').show()
+                                        document.getElementById('c2b_response').innerHTML = _res.ResultDesc;
+                                        document.getElementById('c2b_response').style.color = "green"
+                                        setTimeout(recievedPayment,5000)
+                                        
+                                        function recievedPayment(){
+                                        
+                                          $('#c2b_response').fadeOut()
+                                        // window.location.reload()
+                                        }
+                                    } else if(_res.ResultCode && _res.ResultCode != 0) {
+                                        clearInterval(interval)
+                                        $('#c2b_response').show()
+                                        
+                                        document.getElementById('c2b_response').innerHTML = _res.ResultDesc;
+                                        document.getElementById('c2b_response').style.color = "red"
+                                        setTimeout(failedPayment,5000)
+                                        
+                                        function failedPayment(){
+                                          $('#c2b_response').fadeOut()
+                                        // window.location.reload()
+                                        }
+                                    }
+                                    console.log(_res)
+                                }
+
+                                if(_poll.status >= 500) {
+                                    clearInterval(interval)
+                                    $('#c2b_response').show()
+                                        document.getElementById('c2b_response').innerHTML = "Sorry we encountered an error";
+                                        document.getElementById('c2b_response').style.color = "red"
+                                        setTimeout(failedPayment,5000)
+                                        
+                                        function failedPayment(){
+                                          $('#c2b_response').fadeOut()
+                                        
+                                        }
+                                    
+                                }
+                                            
+                             }
+                            interval = setInterval(callback, 2000)
+
+                            
+                            $('#c2b_response').show()
+                                                                 
+                            document.getElementById('c2b_response').innerHTML = response.data.ResponseDescription
+                            document.getElementById('c2b_response').style.color = "orange"
+                          } 
+                          else {
+                              $('#c2b_response').show()
+                              document.getElementById('c2b_response').innerHTML = response.data.errorMessage 
+                              document.getElementById('c2b_response').style.color = "red"
+                                        setTimeout(failedPayment,5000)
+                                        
+                                        function failedPayment(){
+                                          $('#c2b_response').fadeOut()
+                                        
+                                        }
+                                    
+                            }}).catch((error) => 
+                            { 
+                              console.log(error);
+                            })
+                    })
+
     
-
-    // Enable Google Authentication
-    $( "#switch" ).change(function() {
-      $( ".google-authentication" ).slideToggle( "slow" );
-    });
-
-    // Betpop Up Modal Active
-    $('.bottom-item .firstTeam').on('click', function () {
-      $(".top-item .cmn-btn").removeClass("active");
-      $(".top-item .firstTeam").addClass("active");
-    });
-    $('.bottom-item .lastTeam').on('click', function () {
-      $(".top-item .cmn-btn").removeClass("active");
-      $(".top-item .lastTeam").addClass("active");
-    });
-    $('.bottom-item .draw').on('click', function () {
-      $(".top-item .cmn-btn").removeClass("active");
-      $(".top-item .draw").addClass("active");
-    });
-
-    // Blog Reply btn
-    var replybtn = $(".reply-btn");
-    $(replybtn).on('click', function () {
-      $(this).next().slideToggle('slow');
-    });
-
-    // social link active
-    var socialLink = $(".social-link a");
-    $(socialLink).on('mouseover', function () {
-      $(socialLink).removeClass('active');
-      $(this).addClass('active');
-    });
-
   });
 });

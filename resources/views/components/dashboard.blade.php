@@ -305,6 +305,7 @@ $firstname = explode(" ", auth()->user()->name)[0];
     <!-- Footer Area End -->
 
     <!--==================================================================-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery-ui.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>

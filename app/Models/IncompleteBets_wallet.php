@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FinishedBets_Wallet extends Model
+class IncompleteBets_wallet extends Model
 {
     use HasFactory;
-    protected $table = 'finishedbets_wallet';
+    protected $table = 'incompletebets_wallet';
     protected $fillable =[
         'competition_id',
         'user_id',
@@ -19,8 +19,9 @@ class FinishedBets_Wallet extends Model
 
         
     ];
-    public function closedcompetition()
+    public function incompletecompetition()
     {
-        return $this->belongsTo(FinishedBets::class,'competition_id','id');
+        return $this->belongsTo(IncompleteBets::class,'competition_id','id');
     }
+   
 }

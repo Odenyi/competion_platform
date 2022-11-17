@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('finishedbets_wallet', function (Blueprint $table) {
+        Schema::create('incompletebets_wallet', function (Blueprint $table) {
             $table->id();
             $table->string('competition_id');
             $table->string('user_id');
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('finishedbets_wallet');
+        Schema::dropIfExists('incompletebets_wallet');
     }
 };

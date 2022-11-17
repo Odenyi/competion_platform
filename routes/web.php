@@ -5,6 +5,8 @@ use App\Http\Controllers\CompletedController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Frontend\BettingController;
 use App\Http\Controllers\frontend\PlacedbetController;
+use App\Http\Controllers\Mpesa\MPESAController;
+use App\Http\Controllers\Mpesa\MpesaResponseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WelcomeController;
@@ -28,6 +30,10 @@ Route::get('/dashboard', [DashboardController::class,'index']);
 
 Route::post('/depositamount', [DashboardController::class,'update']);
 Route::post('/withdrawcash', [DashboardController::class,'withdraw']);
+Route::post('/stkpush/creditaccount', [MPESAController::class,'stkPush']);
+Route::get('/senddarajaapidata', [MpesaController::class,'depositAmount']);
+Route::get('/confirmationstk/{id}', [MpesaResponseController::class,'stkPushresponse']);
+
 
  //remove from betslip
  Route::post('/delete-betslip',[BettingController::class,'deleteBetslip']);

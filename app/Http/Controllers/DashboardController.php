@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\FinishedBets_Wallet;
+use App\Models\IncompleteBets;
+use App\Models\IncompleteBets_wallet;
 use App\Models\UserAccounts;
+use App\Models\VirtualWallet;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +16,10 @@ class DashboardController extends Controller
     public function index(){
         
         $useraccount = UserAccounts::where('user_id',Auth::user()->id)->get();
-        return view('dashboard',compact( 'useraccount'));
+        $userincompletebets = IncompleteBets_wallet::where('user_id',Auth::user()->id)->get();
+        $userclosedbets = FinishedBets_Wallet::where('user_id',Auth::user()->id)->get();
+        $userprogressbets = VirtualWallet::where('user_id',Auth::user()->id)->get();
+        return view('dashboard',compact( 'useraccount','userclosedbets','userincompletebets','userprogressbets'));
     }
 
     public function update(Request $request)

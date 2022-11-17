@@ -13,14 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('finishedbets_wallet', function (Blueprint $table) {
+        Schema::create('incompletebets', function (Blueprint $table) {
             $table->id();
-            $table->string('competition_id');
-            $table->string('user_id');
-            $table->tinyInteger('bet_type');
-            $table->string('status');
-            $table->integer('stake');
-            $table->integer('amount');
+            $table->string('home_team');
+            $table->string('away_team');
+            $table->integer('odd');
+            $table->string('start_time');
+            $table->string('end_time');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('finishedbets_wallet');
+        Schema::dropIfExists('incompletebets');
     }
 };

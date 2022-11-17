@@ -212,158 +212,134 @@
                                         <div class="tab-content">
                                             <div class="tab-pane fade show active" id="open-playing" role="tabpanel"
                                                 aria-labelledby="open-playing-tab">
-                                                <div class="single-area">
-                                                    <div class="head-area d-flex align-items-center">
-                                                        <span class="mdr cmn-btn">Pick Winner</span>
-                                                        <p>Mar 23, 2022,3:45PM EDT</p>
-                                                    </div>
-                                                    <div class="main-content">
-                                                        <div class="team-single">
-                                                            <h4>Arsenal</h4>
-                                                            <span class="mdr">Home</span>
-                                                            <div class="img-area">
-                                                                <img src="assets/images/team-logo-1.png" alt="image">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mid-area text-center">
-                                                            <div
-                                                                class="countdown d-flex align-items-center justify-content-center">
-                                                                <h4>
-                                                                    <span class="hours">15</span><span
-                                                                        class="ref">h</span><span class="seperator">:</span>
-                                                                </h4>
-                                                                <h4>
-                                                                    <span class="minutes">21</span><span
-                                                                        class="ref">m</span><span class="seperator">:</span>
-                                                                </h4>
-                                                                <h4>
-                                                                    <span class="seconds">17</span><span
-                                                                        class="ref">s</span>
-                                                                </h4>
-                                                            </div>
-                                                            <h6>Division- Belarus</h6>
-                                                        </div>
-                                                        <div class="team-single">
-                                                            <h4>Volna</h4>
-                                                            <span class="mdr">Away</span>
-                                                            <div class="img-area">
-                                                                <img src="assets/images/team-logo-2.png" alt="image">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bottom-item">
-                                                        <button type="button" class="cmn-btn firstTeam"
-                                                            data-bs-toggle="modal" data-bs-target="#betpop-up">Eagle will
-                                                            win</button>
-                                                        <button type="button" class="cmn-btn draw" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Draw</button>
-                                                        <button type="button" class="cmn-btn lastTeam"
-                                                            data-bs-toggle="modal" data-bs-target="#betpop-up">Paeek will
-                                                            win</button>
-                                                    </div>
-                                                </div>
+                                                <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Date/Time</th>
+                                                    <th scope="col">Game</th>
+                                                    <th scope="col">Choice</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Stake</th>
+                                                    <th scope="col">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($userprogressbets as $userbet)
+                                                @php
+                                                    $possiblewin = ($userbet->amount * $userbet->competition->odd)*95/100;
+
+                                                @endphp
+                                                <tr>
+                                                    <th scope="row">{{ $userbet->updated_at }}</th>
+                                                    <td>{{$userbet->competition->home_team}} X {{$userbet->competition->away_team}}</td>
+                                                    <td>@if ($userbet->bet_type == 1)
+                                                        {{$userbet->competition->home_team}}  
+                                                        @elseif ($userbet->bet_type == 0) 
+                                                        draw
+                                                        @else($userbet->bet_type == 2) 
+                                                        {{$userbet->competition->away_team }}                                                   
+                                                    @endif</td>
+                                                    <td>@if ($userbet->competition->status == 'completed')
+                                                        Complete
+                                                        @else
+                                                        In progress
+                                                        
+                                                    @endif</td>
+                                                    <td>{{$userbet->amount}}</td>
+                                                    <td>
+                                                        {{$possiblewin}}
+                                                    </td>
+                                                    
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                         </table>
+                                        </div>
                                             </div>
                                             <div class="tab-pane fade" id="canceled" role="tabpanel"
                                                 aria-labelledby="canceled-tab">
-                                                <div class="single-area">
-                                                    <div class="head-area d-flex align-items-center">
-                                                        <span class="mdr cmn-btn">Pick Winner</span>
-                                                        <p>Mar 23, 2022,3:45PM EDT</p>
-                                                    </div>
-                                                    <div class="main-content">
-                                                        <div class="team-single">
-                                                            <h4>Apollon</h4>
-                                                            <span class="mdr">Home</span>
-                                                            <div class="img-area">
-                                                                <img src="assets/images/team-logo-3.png" alt="image">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mid-area text-center">
-                                                            <div
-                                                                class="countdown d-flex align-items-center justify-content-center">
-                                                                <h4>
-                                                                    <span class="hours">15</span><span
-                                                                        class="ref">h</span><span class="seperator">:</span>
-                                                                </h4>
-                                                                <h4>
-                                                                    <span class="minutes">15</span><span
-                                                                        class="ref">m</span><span class="seperator">:</span>
-                                                                </h4>
-                                                                <h4>
-                                                                    <span class="seconds">46</span><span
-                                                                        class="ref">s</span>
-                                                                </h4>
-                                                            </div>
-                                                            <h6>Division (Cyprus)</h6>
-                                                        </div>
-                                                        <div class="team-single">
-                                                            <h4>Paeek</h4>
-                                                            <span class="mdr">Away</span>
-                                                            <div class="img-area">
-                                                                <img src="assets/images/team-logo-4.png" alt="image">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bottom-item">
-                                                        <button type="button" class="cmn-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Eagle will win</button>
-                                                        <button type="button" class="cmn-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Draw</button>
-                                                        <button type="button" class="cmn-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Paeek will win</button>
-                                                    </div>
-                                                </div>
+                                                <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Date/Time</th>
+                                                    <th scope="col">Game</th>
+                                                    <th scope="col">Choice</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Stake</th>
+                                                    <th scope="col">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($userincompletebets as $userbet)
+                                                @php
+                                                    $possiblewin = ($userbet->stake * $userbet->incompleteCompetition->odd);
+
+                                                @endphp
+                                                <tr>
+                                                    <th scope="row">{{ $userbet->updated_at }}</th>
+                                                    <td>{{$userbet->incompleteCompetition->home_team}} X {{$userbet->incompleteCompetition->away_team}}</td>
+                                                    <td>@if ($userbet->bet_type == 1)
+                                                        {{$userbet->incompleteCompetition->home_team}}  
+                                                        @elseif ($userbet->bet_type == 0) 
+                                                        draw
+                                                        @else($userbet->bet_type == 2) 
+                                                        {{$userbet->incompleteCompetition->away_team }}                                                   
+                                                    @endif</td>
+                                                    <td>{{$userbet->status}}</td>
+                                                    <td>{{$userbet->stake}}</td>
+                                                    <td>
+                                                        {{$possiblewin}}
+                                                    </td>
+                                                    
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                             </div>
                                             <div class="tab-pane fade" id="finished" role="tabpanel"
                                                 aria-labelledby="finished-tab">
-                                                <div class="single-area">
-                                                    <div class="head-area d-flex align-items-center">
-                                                        <span class="mdr cmn-btn">Pick Winner</span>
-                                                        <p>Mar 23, 2022,3:45PM EDT</p>
-                                                    </div>
-                                                    <div class="main-content">
-                                                        <div class="team-single">
-                                                            <h4>Raufoss</h4>
-                                                            <span class="mdr">Home</span>
-                                                            <div class="img-area">
-                                                                <img src="assets/images/team-logo-5.png" alt="image">
-                                                            </div>
-                                                        </div>
-                                                        <div class="mid-area text-center">
-                                                            <div
-                                                                class="countdown d-flex align-items-center justify-content-center">
-                                                                <h4>
-                                                                    <span class="hours">15</span><span
-                                                                        class="ref">h</span><span class="seperator">:</span>
-                                                                </h4>
-                                                                <h4>
-                                                                    <span class="minutes">15</span><span
-                                                                        class="ref">m</span><span class="seperator">:</span>
-                                                                </h4>
-                                                                <h4>
-                                                                    <span class="seconds">17</span><span
-                                                                        class="ref">s</span>
-                                                                </h4>
-                                                            </div>
-                                                            <h6>Division (Norway)</h6>
-                                                        </div>
-                                                        <div class="team-single">
-                                                            <h4>Åsane</h4>
-                                                            <span class="mdr">Away</span>
-                                                            <div class="img-area">
-                                                                <img src="assets/images/team-logo-6.png" alt="image">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="bottom-item">
-                                                        <button type="button" class="cmn-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Eagle will win</button>
-                                                        <button type="button" class="cmn-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Draw</button>
-                                                        <button type="button" class="cmn-btn" data-bs-toggle="modal"
-                                                            data-bs-target="#betpop-up">Paeek will win</button>
-                                                    </div>
-                                                </div>
+                                                <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Date/Time</th>
+                                                    <th scope="col">Game</th>
+                                                    <th scope="col">Choice</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Stake</th>
+                                                    <th scope="col">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach ($userclosedbets as $userbet)
+                                                @php
+                                                    $possiblewin = ($userbet->stake * $userbet->closedcompetition->odd)*95/100;
+
+                                                @endphp
+                                                <tr>
+                                                    <th scope="row">{{ $userbet->updated_at }}</th>
+                                                    <td>{{$userbet->closedcompetition->home_team}} X {{$userbet->closedcompetition->away_team}}</td>
+                                                    <td>@if ($userbet->bet_type == 1)
+                                                        {{$userbet->closedcompetition->home_team}}  
+                                                        @elseif ($userbet->bet_type == 0) 
+                                                        draw
+                                                        @else($userbet->bet_type == 2) 
+                                                        {{$userbet->closedcompetition->away_team }}                                                   
+                                                    @endif</td>
+                                                    <td>{{$userbet->status}}</td>
+                                                    <td>{{$userbet->stake}}</td>
+                                                    <td>
+                                                        {{$possiblewin}}
+                                                    </td>
+                                                    
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
+                                        </table>
+                                    </div>
                                             </div>
                                         </div>
                                     </div>
@@ -389,19 +365,19 @@
                                             <div class="right-area">
                                                 <h5>Deposit</h5>
                                                 <div class="address-bar">
-                                                    <form action="/depositamount" method="POST" id="depositform">
+                                                    <form action="" method="" id="depositform">
                                                         @csrf
                                                         <p>Send money into your BetPeer account</p>
-                                                     
+                                                        <p id="c2b_response"></p>
                                                         <div class="input-single">
                                                             <label>Amount</label>
                                                             <div class="input-area">
-                                                                <input type="number" placeholder="Enter Amount" name="depositamount">
+                                                                <input type="number" placeholder="Enter Amount" name="depositamount" id="depositamount">
                                                             </div>
                                                         </div>
                                                         
                                                         <span class="btn-border">
-                                                            <a href="javascript:void(0)" class="cmn-btn" onclick="document.getElementById('depositform').submit()">Deposit</a>
+                                                            <a href="javascript:void(0)" class="cmn-btn" id="depositviaMpesa">Deposit</a>
                                                         </span>
                                                     
                                                     
