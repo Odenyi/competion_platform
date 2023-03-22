@@ -7,10 +7,10 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-##Peer to Peer Betting Web Application
+Peer to Peer Betting Web Application
 This web application is a peer to peer betting platform where individuals can bet against each other on sports matches, and the winner is credited with the bet amount. The web application is built using the Laravel framework and it integrates with the Daraja API to facilitate the sending and receiving of money on mobile devices. Users can select multiple bets and bet against each other.
 
-##Features
+Features
 The following are the main features of the web application:
 
 User registration and login
@@ -28,7 +28,7 @@ Install the dependencies by running composer install in the project directory
 Copy the .env.example file to .env and update the database configuration and Daraja API credentials
 Run the database migrations by running php artisan migrate
 Start the development server by running php artisan serve
-##Dependencies
+Dependencies
 The following are the main dependencies of the web application:
 
 Laravel framework
@@ -37,5 +37,5 @@ MySQL database
 Contribution
 If you would like to contribute to the development of the web application, please fork the repository and create a pull request with your changes.
 
-##License
+License
 This web application is licensed under the MIT license.
